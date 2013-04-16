@@ -1,0 +1,5 @@
+<Bindings>
+	<Binding name="GOFISH_TOGGLE" header="GOFISH">
+		GoFish:ToggleFishingMode()
+	</Binding>
+</Bindings>
