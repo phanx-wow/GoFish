@@ -1,0 +1,11 @@
+## Interface: 50200
+## Version: 5.2.0.wowi:revision
+
+## Title: GoFish
+## Notes: Double right click to fish. Enhanced SFX while fishing.
+
+## Author: Phanx
+
+## SavedVariables: GoFishDB
+
+Addon.lua
