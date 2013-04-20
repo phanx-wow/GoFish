@@ -8,23 +8,102 @@
 -- DONE: Enhance SFX and lower other sounds while fishing.
 -- TODO: Key binding and slash command to toggle quick casting.
 -- TODO: Auto enable quick casting when equipping a fishing pole.
--- TODO: Auto enable quick casting when mousing over a fish pool. Disable after 2 seconds.
+-- TODO: Auto enable quick casting when mousing over a fish pool. Disable after 10 seconds.
 
 local ADDON, ns = ...
-local L = {
-	ToggleFishingMode = "Toggle fishing mode",
-}
 
-BINDING_HEADER_GOFISH = GetAddOnMetadata(ADDON, "Title") or ADDON
+local L = ns.L
+L.FishingModeOff = L.FishingModeOff:gsub("{", GRAY_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
+L.FishingModeOn  = L.FishingModeOn:gsub("{", GREEN_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
+
+BINDING_HEADER_GOFISH      = GetAddOnMetadata(ADDON, "Title") or ADDON
 BINDING_NAME_GOFISH_TOGGLE = L.ToggleFishingMode
 
 ------------------------------------------------------------------------
 
-local autoInteract		-- was autoInteract enabled before we started fishing mode?
+local fishingPools = {
+	[ns.F["Abundant Firefin Snapper School"]] = true,
+	[ns.F["Abundant Oily Blackmouth School"]] = true,
+	[ns.F["Albino Cavefish School"]] = true,
+	[ns.F["Algaefin Rockfish School"]] = true,
+	[ns.F["Blackbelly Mudfish School"]] = true,
+	[ns.F["Bloodsail Wreckage"]] = true,
+	[ns.F["Bloodsail Wreckage Pool"]] = true,
+	[ns.F["Bluefish School"]] = true,
+	[ns.F["Borean Man O' War School"]] = true,
+	[ns.F["Brackish Mixed School"]] = true,
+	[ns.F["Deep Sea Monsterbelly School"]] = true,
+	[ns.F["Deepsea Sagefish School"]] = true,
+	[ns.F["Dragonfin Angelfish School"]] = true,
+	[ns.F["Emperor Salmon School"]] = true,
+	[ns.F["Fangtooth Herring School"]] = true,
+	[ns.F["Fathom Eel Swarm"]] = true,
+	[ns.F["Feltail School"]] = true,
+	[ns.F["Firefin Snapper School"]] = true,
+	[ns.F["Floating Debris"]] = true,
+	[ns.F["Floating Debris Pool"]] = true,
+	[ns.F["Floating Shipwreck Debris"]] = true,
+	[ns.F["Floating Wreckage"]] = true,
+	[ns.F["Floating Wreckage Pool"]] = true,
+	[ns.F["Giant Mantis Shrimp Swarm"]] = true,
+	[ns.F["Glacial Salmon School"]] = true,
+	[ns.F["Glassfin Minnow School"]] = true,
+	[ns.F["Golden Carp School"]] = true,
+	[ns.F["Greater Sagefish School"]] = true,
+	[ns.F["Highland Guppy School"]] = true,
+	[ns.F["Highland Mixed School"]] = true,
+	[ns.F["Imperial Manta Ray School"]] = true,
+	[ns.F["Jade Lungfish School"]] = true,
+	[ns.F["Jewel Danio School"]] = true,
+	[ns.F["Krasarang Paddlefish School"]] = true,
+	[ns.F["Lesser Firefin Snapper School"]] = true,
+	[ns.F["Lesser Floating Debris"]] = true,
+	[ns.F["Lesser Oily Blackmouth School"]] = true,
+	[ns.F["Lesser Sagefish School"]] = true,
+	[ns.F["Moonglow Cuttlefish School"]] = true,
+	[ns.F["Mountain Trout School"]] = true,
+	[ns.F["Muddy Churning Water"]] = true,
+	[ns.F["Mudfish School"]] = true,
+	[ns.F["Musselback Sculpin School"]] = true,
+	[ns.F["Nettlefish School"]] = true,
+	[ns.F["Oil Spill"]] = true,
+	[ns.F["Oily Blackmouth School"]] = true,
+	[ns.F["Patch of Elemental Water"]] = true,
+	[ns.F["Pool of Fire"]] = true,
+	[ns.F["Pure Water"]] = true,
+	[ns.F["Redbelly Mandarin School"]] = true,
+	[ns.F["Reef Octopus Swarm"]] = true,
+	[ns.F["Sagefish School"]] = true,
+	[ns.F["School of Darter"]] = true,
+	[ns.F["School of Deviate Fish"]] = true,
+	[ns.F["School of Tastyfish"]] = true,
+	[ns.F["Schooner Wreckage"]] = true,
+	[ns.F["Schooner Wreckage Pool"]] = true,
+	[ns.F["Shipwreck Debris"]] = true,
+	[ns.F["Sparse Firefin Snapper School"]] = true,
+	[ns.F["Sparse Oily Blackmouth School"]] = true,
+	[ns.F["Sparse Schooner Wreckage"]] = true,
+	[ns.F["Spinefish School"]] = true,
+	[ns.F["Sporefish School"]] = true,
+	[ns.F["Steam Pump Flotsam"]] = true,
+	[ns.F["Stonescale Eel Swarm"]] = true,
+	[ns.F["Strange Pool"]] = true,
+	[ns.F["Teeming Firefin Snapper School"]] = true,
+	[ns.F["Teeming Floating Wreckage"]] = true,
+	[ns.F["Teeming Oily Blackmouth School"]] = true,
+	[ns.F["Tiger Gourami School"]] = true,
+	[ns.F["Waterlogged Wreckage"]] = true,
+	[ns.F["Waterlogged Wreckage Pool"]] = true,
+}
+
+------------------------------------------------------------------------
+
+local autoInteract		-- was autoInteract ON before we started fishing mode?
+local autoLoot          -- was autoLoot OFF before we started fishing mode?
+local autoStopTime      -- GetTime() to turn off auto-enabled fishing mode
 local clearBinding		-- was combat started mid-click, leaving us stuck in fishing mode?
 local isFishing			-- is fishing mode on?
 local hasBinding		-- are we in the middle of a double-click to fish?
-local autoStopTime      -- GetTime() to turn off auto-enabled fishing mode
 
 ------------------------------------------------------------------------
 
@@ -45,83 +124,6 @@ local fishingValues = {
 	Sound_SFXVolume = 0.5,
 	Sound_MusicVolume = 1,
 	Sound_AmbienceVolume = 0.25,
-}
-
-------------------------------------------------------------------------
-
-local fishingPools = {
-	["Abundant Firefin Snapper School"] = true,
-	["Abundant Oily Blackmouth School"] = true,
-	["Albino Cavefish School"] = true,
-	["Algaefin Rockfish School"] = true,
-	["Blackbelly Mudfish School"] = true,
-	["Bloodsail Wreckage"] = true,
-	["Bloodsail Wreckage Pool"] = true,
-	["Bluefish School"] = true,
-	["Borean Man O' War School"] = true,
-	["Brackish Mixed School"] = true,
-	["Deep Sea Monsterbelly School"] = true,
-	["Deepsea Sagefish School"] = true,
-	["Dragonfin Angelfish School"] = true,
-	["Emperor Salmon School"] = true,
-	["Fangtooth Herring School"] = true,
-	["Fathom Eel Swarm"] = true,
-	["Feltail School"] = true,
-	["Firefin Snapper School"] = true,
-	["Floating Debris"] = true,
-	["Floating Debris Pool"] = true,
-	["Floating Shipwreck Debris"] = true,
-	["Floating Wreckage"] = true,
-	["Floating Wreckage Pool"] = true,
-	["Giant Mantis Shrimp Swarm"] = true,
-	["Glacial Salmon School"] = true,
-	["Glassfin Minnow School"] = true,
-	["Golden Carp School"] = true,
-	["Greater Sagefish School"] = true,
-	["Highland Guppy School"] = true,
-	["Highland Mixed School"] = true,
-	["Imperial Manta Ray School"] = true,
-	["Jade Lungfish School"] = true,
-	["Jewel Danio School"] = true,
-	["Krasarang Paddlefish School"] = true,
-	["Lesser Firefin Snapper School"] = true,
-	["Lesser Floating Debris"] = true,
-	["Lesser Oily Blackmouth School"] = true,
-	["Lesser Sagefish School"] = true,
-	["Moonglow Cuttlefish School"] = true,
-	["Mountain Trout School"] = true,
-	["Muddy Churning Water"] = true,
-	["Mudfish School"] = true,
-	["Musselback Sculpin School"] = true,
-	["Nettlefish School"] = true,
-	["Oil Spill"] = true,
-	["Oily Blackmouth School"] = true,
-	["Patch of Elemental Water"] = true,
-	["Pool of Fire"] = true,
-	["Pure Water"] = true,
-	["Redbelly Mandarin School"] = true,
-	["Reef Octopus Swarm"] = true,
-	["Sagefish School"] = true,
-	["School of Darter"] = true,
-	["School of Deviate Fish"] = true,
-	["School of Tastyfish"] = true,
-	["Schooner Wreckage"] = true,
-	["Schooner Wreckage Pool"] = true,
-	["Shipwreck Debris"] = true,
-	["Sparse Firefin Snapper School"] = true,
-	["Sparse Oily Blackmouth School"] = true,
-	["Sparse Schooner Wreckage"] = true,
-	["Spinefish School"] = true,
-	["Sporefish School"] = true,
-	["Steam Pump Flotsam"] = true,
-	["Stonescale Eel Swarm"] = true,
-	["Strange Pool"] = true,
-	["Teeming Firefin Snapper School"] = true,
-	["Teeming Floating Wreckage"] = true,
-	["Teeming Oily Blackmouth School"] = true,
-	["Tiger Gourami School"] = true,
-	["Waterlogged Wreckage"] = true,
-	["Waterlogged Wreckage Pool"] = true,
 }
 
 ------------------------------------------------------------------------
@@ -190,9 +192,11 @@ end
 ------------------------------------------------------------------------
 
 function GoFish:EnableFishingMode()
-	if isFishing then return end
+	if isFishing then
+		return --print("Already fishing")
+	end
 	if not GetSpellInfo(FISHING) then
-		return
+		return --print("Fishing not learned")
 	end
 	if self.SetupClickHook then
 		self:SetupClickHook()
@@ -202,8 +206,12 @@ function GoFish:EnableFishingMode()
 		SetCVar("autointeract", 0)
 		autoInteract = 1
 	end
+	if not GetCVarBool("autoLootDefault") then
+		SetCVar("autoLoot", 1)
+		autoLoot = 1
+	end
 	isFishing = true
-	print("Fishing mode ON")
+	print("|cff00ddbaGoFish:|r", L.FishingModeOn)
 end
 
 function GoFish:DisableFishingMode()
@@ -213,7 +221,14 @@ function GoFish:DisableFishingMode()
 		SetCVar("autointeract", 1)
 		autoInteract = nil
 	end
-	print("Fishing mode OFF")
+	if autoLoot then
+		SetCVar("autoLoot", 0)
+		autoLoot = nil
+	end
+	if autoStopTime then
+		autoStopTime = nil
+	end
+	print("|cff00ddbaGoFish:|r", L.FishingModeOff)
 end
 
 function GoFish:ToggleFishingMode()
@@ -233,8 +248,8 @@ function GoFish:PLAYER_LOGIN()
 
 	self:RegisterEvent("PLAYER_REGEN_DISABLED")
 	self:RegisterEvent("PLAYER_REGEN_ENABLED")
-	self:RegisterUnitEvent("UNIT_CHANNEL_START", "player")
-	self:RegisterUnitEvent("UNIT_CHANNEL_STOP", "player")
+	self:RegisterUnitEvent("UNIT_SPELLCAST_CHANNEL_START", "player")
+	self:RegisterUnitEvent("UNIT_SPELLCAST_CHANNEL_STOP", "player")
 	self:RegisterUnitEvent("UNIT_INVENTORY_CHANGED", "player")
 end
 
@@ -257,6 +272,9 @@ function GoFish:PLAYER_REGEN_DISABLED()
 	if UnitChannelInfo("unit") == FISHING then
 		self:UNIT_SPELLCAST_CHANNEL_STOP("player", FISHING)
 	end
+	if isFishing then
+		self:DisableFishingMode()
+	end
 end
 
 function GoFish:PLAYER_REGEN_ENABLED()
@@ -277,7 +295,7 @@ function GoFish:UNIT_SPELLCAST_CHANNEL_START(unit, spell)
 	if spell == FISHING then
 		--print("Fishing START")
 		if autoStopTime then
-			autoStopTime = GetTime() + 1000
+			autoStopTime = GetTime() + 1000 --print("Fishing...")
 		end
 		for k, v in pairs(fishingValues) do
 			normalValues[k] = GetCVar(k)
@@ -290,7 +308,7 @@ function GoFish:UNIT_SPELLCAST_CHANNEL_STOP(unit, spell)
 	if spell == FISHING then
 		--print("Fishing STOP")
 		if autoStopTime then
-			autoStopTime = GetTime() + 10
+			autoStopTime = GetTime() + 10 --print("Ending in 10 seconds")
 		end
 		for k, v in pairs(normalValues) do
 			SetCVar(k, v)
@@ -308,39 +326,41 @@ function GoFish:UNIT_INVENTORY_CHANGED(unit)
 	hasPole = pole
 
 	if hasPole and not isFishing then
+		--print("Pole equipped!")
 		self:EnableFishingMode()
 	elseif isFishing and not hasPole then
+		--print("Pole removed!")
 		self:DisableFishingMode()
 	end
 end
 
 ------------------------------------------------------------------------
 
-local autoStop = GoFish:CreateAnimationGroup()
-autoStop.anim = autoStop:CreateAnimation()
-autoStop.anim:SetDuration(1)
-autoStop:SetScript("OnFinished", function(self, forced)
+local timerFrame = CreateFrame("Frame")
+local timerGroup = timerFrame:CreateAnimationGroup()
+local timer = timerGroup:CreateAnimation()
+timer:SetDuration(1)
+timerGroup:SetScript("OnFinished", function(self, requested)
 	if not isFishing or not autoStopTime then return end
 	if GetTime() > autoStopTime then
-		self:StopFishing()
+		GoFish:DisableFishingMode()
 		autoStopTime = nil
 	else
 		self:Play()
 	end
 end)
 
-hooksecurefunc(GameTooltip, "Show", function(self)
-	if not isFishing then return end
-	if self:GetItem() or self:GetUnit() then return end
+GameTooltip:HookScript("OnShow", function(self)
+	if isFishing or self:GetItem() or self:GetUnit() then return end
 
 	local text = GameTooltipTextLeft1:GetText()
 	if not text or not fishingPools[text] then return end
 
-	self:EnableFishingMode()
+	GoFish:EnableFishingMode()
 	if not isFishing then return end
 
-	autoStopTime = GetTime() + 10
-	autoStop:Play()
+	autoStopTime = GetTime() + 10 --print("Ending in 10 seconds")
+	timerGroup:Play()
 end)
 
 ------------------------------------------------------------------------

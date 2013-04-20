@@ -2,10 +2,13 @@
 ## Version: 5.2.0.wowi:revision
 
 ## Title: GoFish
-## Notes: Double right click to fish. Enhanced SFX while fishing.
+## Notes: Quick-cast fishing and enhanced fishing sounds.
 
 ## Author: Phanx
 
 ## SavedVariables: GoFishDB
+
+Localization.lua
+Localization-es.lua
 
 Addon.lua
