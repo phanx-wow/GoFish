@@ -351,10 +351,10 @@ timerGroup:SetScript("OnFinished", function(self, requested)
 end)
 
 GameTooltip:HookScript("OnShow", function(self)
-	if isFishing or self:GetItem() or self:GetUnit() then return end
+	if isFishing then return end
 
 	local text = GameTooltipTextLeft1:GetText()
-	if not text or not fishingPools[text] then return end
+	if not text or not fishingPools[text] or IsMounted() or IsInCombat() or self:GetItem() or self:GetUnit() then return end
 
 	GoFish:EnableFishingMode()
 	if not isFishing then return end
