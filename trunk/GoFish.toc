@@ -2,9 +2,17 @@
 ## Version: 5.2.0.wowi:revision
 
 ## Title: GoFish
-## Notes: Quick-cast fishing and enhanced fishing sounds.
+## Notes: Click-cast fishing and enhanced fishing sounds.
 
 ## Author: Phanx
+## X-Email: addons@phanx.net
+## X-Copyright: Copyright (c) 2013 Phanx. All rights reserved.
+## X-License: See accompanying LICENSE file for details.
+## X-CompatibleLocales: deDE, enUS, esES, esMX, frFR, itIT, koKR, ptBR, ptPT, ruRU, zhCN, zhTW
+## X-Localizations: enUS, esES, esMX
+## X-Website: http://www.wowinterface.com/downloads/info-GoFish.html
+## X-Curse-Project-ID: gofish
+## X-WoWI-ID:
 
 ## SavedVariables: GoFishDB
 
