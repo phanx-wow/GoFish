@@ -1,14 +1,11 @@
 --[[--------------------------------------------------------------------
 	GoFish
-	A World of Warcraft user interface addon
-	Copyright (c) 2013 Phanx
-	Some portions based on FishermansFriend by Ammo and Archy by Torhal.
+	Click-cast fishing and enhanced fishing sounds.
+	Copyright (c) 2013 Phanx <addons@phanx.net>. All rights reserved.
+	See the accompanying README and LICENSE files for more information.
+	http://www.wowinterface.com/downloads/info-GoFish.html
+	http://www.curse.com/addons/wow/gofish
 ----------------------------------------------------------------------]]
-
--- DONE: Enhance SFX and lower other sounds while fishing.
--- TODO: Key binding and slash command to toggle quick casting.
--- TODO: Auto enable quick casting when equipping a fishing pole.
--- TODO: Auto enable quick casting when mousing over a fish pool. Disable after 10 seconds.
 
 local ADDON, ns = ...
 
