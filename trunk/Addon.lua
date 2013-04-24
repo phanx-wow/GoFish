@@ -205,7 +205,7 @@ function GoFish:EnableFishingMode()
 		autoInteract = 1
 	end
 	if not GetCVarBool("autoLootDefault") then
-		SetCVar("autoLoot", 1)
+		SetCVar("autoLootDefault", 1)
 		autoLoot = 1
 	end
 	isFishing = true
@@ -220,7 +220,7 @@ function GoFish:DisableFishingMode()
 		autoInteract = nil
 	end
 	if autoLoot then
-		SetCVar("autoLoot", 0)
+		SetCVar("autoLootDefault", 0)
 		autoLoot = nil
 	end
 	if autoStopTime then
