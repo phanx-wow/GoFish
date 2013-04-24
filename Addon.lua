@@ -29,6 +29,7 @@ local fishingPools = {
 	[ns.F["Bluefish School"]] = true,
 	[ns.F["Borean Man O' War School"]] = true,
 	[ns.F["Brackish Mixed School"]] = true,
+	[ns.F["Crane Yolk Pool"]] = true,
 	[ns.F["Deep Sea Monsterbelly School"]] = true,
 	[ns.F["Deepsea Sagefish School"]] = true,
 	[ns.F["Dragonfin Angelfish School"]] = true,
@@ -174,7 +175,7 @@ function GoFish:SetupClickHook()
 		local clickDiff = clickTime - lastClickTime
 		lastClickTime = clickTime
 
-		if clickDiff > 0.05 and clickDiff < 0.4 then
+		if clickDiff > 0.05 and clickDiff < 0.25 then
 			--print("GoFish!")
 			if IsMouselooking() then
 				MouselookStop()

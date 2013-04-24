@@ -8,7 +8,7 @@
 ----------------------------------------------------------------------]]
 
 local _, ns = ...
-local L, F = {}, {}
+local L, F = {}, setmetatable({}, { __index = function(t,k) t[k] = k return k end })
 ns.L, ns.F = L, F
 
 ------------------------------------------------------------------------
@@ -29,6 +29,7 @@ F["Bloodsail Wreckage Pool"] = "Bloodsail Wreckage Pool"
 F["Bluefish School"] = "Bluefish School"
 F["Borean Man O' War School"] = "Borean Man O' War School"
 F["Brackish Mixed School"] = "Brackish Mixed School"
+F["Crane Yolk Pool"] = "Crane Yolk Pool"
 F["Deep Sea Monsterbelly School"] = "Deep Sea Monsterbelly School"
 F["Deepsea Sagefish School"] = "Deepsea Sagefish School"
 F["Dragonfin Angelfish School"] = "Dragonfin Angelfish School"
