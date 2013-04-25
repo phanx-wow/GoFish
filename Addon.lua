@@ -19,6 +19,7 @@ BINDING_NAME_GOFISH_TOGGLE = L.ToggleFishingMode
 ------------------------------------------------------------------------
 
 local fishingPools = {
+	[ns.F["Abundant Bloodsail Wreckage"]] = true,
 	[ns.F["Abundant Firefin Snapper School"]] = true,
 	[ns.F["Abundant Oily Blackmouth School"]] = true,
 	[ns.F["Albino Cavefish School"]] = true,

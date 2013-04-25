@@ -1,0 +1,95 @@
+--[[--------------------------------------------------------------------
+	GoFish
+	Click-cast fishing and enhanced fishing sounds.
+	Copyright (c) 2013 Phanx <addons@phanx.net>. All rights reserved.
+	See the accompanying README and LICENSE files for more information.
+	http://www.wowinterface.com/downloads/info-GoFish.html
+	http://www.curse.com/addons/wow/gofish
+----------------------------------------------------------------------]]
+
+if GetLocale() ~= "koKR" then return end
+local _, ns = ...
+local L, F = ns.L, ns.F
+
+------------------------------------------------------------------------
+
+--L.FishingModeOff = "Fishing mode {ON}"
+--L.FishingModeOn = "Fishing mode {OFF}"
+--L.ToggleFishingMode = "Toggle fishing mode"
+
+------------------------------------------------------------------------
+
+F["Abundant Bloodsail Wreckage"] = "풍부한 붉은해적단 잔해"
+F["Abundant Firefin Snapper School"] = "풍부한 불지느러미퉁돔 떼"
+F["Abundant Oily Blackmouth School"] = "풍부한 기름기 많은 아귀 떼"
+F["Albino Cavefish School"] = "백색 동굴어 떼"
+F["Algaefin Rockfish School"] = "심해 총명어 떼"
+F["Blackbelly Mudfish School"] = "검은배 미꾸라지 떼"
+F["Bloodsail Wreckage"] = "붉은해적단 잔해"
+F["Bloodsail Wreckage Pool"] = "붉은해적단 잔해"
+F["Bluefish School"] = "게르치 떼"
+F["Borean Man O' War School"] = "북풍 해파리 떼"
+F["Brackish Mixed School"] = "검은색 물고기 떼"
+-- F["Crane Yolk Pool"] = "Crane Yolk Pool"
+F["Deep Sea Monsterbelly School"] = "깊은 바다 뚱뚱보물고기 떼"
+F["Deepsea Sagefish School"] = "심해 총명어 떼"
+F["Dragonfin Angelfish School"] = "용지느러미 천사돔 떼"
+F["Emperor Salmon School"] = "황제연어 떼"
+F["Fangtooth Herring School"] = "송곳니 청어 떼"
+F["Fathom Eel Swarm"] = "심연 뱀장어 떼"
+F["Feltail School"] = "지옥꼬리퉁돔 떼"
+F["Firefin Snapper School"] = "불지느러미퉁돔 떼"
+F["Floating Debris"] = "표류하는 파편"
+-- F["Floating Debris Pool"] = "Floating Debris Pool"
+-- F["Floating Shipwreck Debris"] = "Floating Shipwreck Debris"
+F["Floating Wreckage"] = "표류하는 잔해"
+F["Floating Wreckage Pool"] = "Floating Wreckage Pool"
+F["Giant Mantis Shrimp Swarm"] = "거대 사마귀 새우 떼"
+F["Glacial Salmon School"] = "빙하연어 떼"
+F["Glassfin Minnow School"] = "유리지느러미 송사리 떼"
+F["Golden Carp School"] = "황금 잉어 떼"
+F["Greater Sagefish School"] = "대형 총명어 떼"
+F["Highland Guppy School"] = "고원 송사리 떼"
+F["Highland Mixed School"] = "고원의 물고기 떼"
+F["Imperial Manta Ray School"] = "황제 쥐가오리 떼"
+F["Jade Lungfish School"] = "비취 폐어 떼"
+F["Jewel Danio School"] = "보석 열대어 떼"
+F["Krasarang Paddlefish School"] = "크라사랑 주걱철갑상어 떼"
+F["Lesser Firefin Snapper School"] = "소량의 불지느러미퉁돔 떼"
+F["Lesser Floating Debris"] = "소량의 표류하는 파편"
+F["Lesser Oily Blackmouth School"] = "소량의 기름기 많은 아귀 떼"
+F["Lesser Sagefish School"] = "소량의 총명어 떼"
+F["Moonglow Cuttlefish School"] = "달빛 오징어 떼"
+F["Mountain Trout School"] = "산악 송어 떼"
+-- F["Muddy Churning Water"] = "Muddy Churning Water"
+F["Mudfish School"] = "미꾸라지 떼"
+F["Musselback Sculpin School"] = "조개등 둑중개 떼"
+F["Nettlefish School"] = "해파리 떼"
+F["Oil Spill"] = "떠다니는 기름"
+F["Oily Blackmouth School"] = "기름기 많은 아귀 떼"
+F["Patch of Elemental Water"] = "정기가 흐르는 물 웅덩이"
+F["Pool of Fire"] = "불타는 웅덩이"
+F["Pure Water"] = "깨끗한 물"
+F["Redbelly Mandarin School"] = "붉은배 쏘가리 떼"
+F["Reef Octopus Swarm"] = "암초문어 떼"
+F["Sagefish School"] = "총명어 떼"
+F["School of Darter"] = "황금 화살고기 떼"
+F["School of Deviate Fish"] = "돌연변이 물고기 떼"
+F["School of Tastyfish"] = "맛둥어 떼"
+F["Schooner Wreckage"] = "범선 잔해"
+F["Schooner Wreckage Pool"] = "범선 잔해"
+F["Shipwreck Debris"] = "난파선 파편"
+F["Sparse Firefin Snapper School"] = "드문드문한 불지느러미퉁돔 떼"
+F["Sparse Oily Blackmouth School"] = "드문드문한 기름기 많은 아귀 떼"
+F["Sparse Schooner Wreckage"] = "드문드문한 범선 잔해"
+F["Spinefish School"] = "가시고기 떼"
+F["Sporefish School"] = "포자물고기 떼"
+F["Steam Pump Flotsam"] = "증기 양수기 부품"
+F["Stonescale Eel Swarm"] = "돌비늘뱀장어 떼"
+-- F["Strange Pool"] = "Strange Pool"
+F["Teeming Firefin Snapper School"] = "우글거리는 불지느러미퉁돔 떼"
+F["Teeming Floating Wreckage"] = "우글거리는 표류하는 잔해"
+F["Teeming Oily Blackmouth School"] = "우글거리는 기름기 많은 아귀 떼"
+F["Tiger Gourami School"] = "호랑이 구라미 떼"
+-- F["Waterlogged Wreckage"] = "Waterlogged Wreckage"
+F["Waterlogged Wreckage Pool"] = "물에 젖은 잔해"
