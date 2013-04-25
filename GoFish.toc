@@ -10,9 +10,9 @@
 ## X-License: See accompanying LICENSE file for details.
 ## X-CompatibleLocales: deDE, enUS, esES, esMX, frFR, itIT, koKR, ptBR, ptPT, ruRU, zhCN, zhTW
 ## X-Localizations: deDE, enUS, esES, esMX, frFR, itIT, koKR, ptBR, ptPT, ruRU, zhCN, zhTWs
-## X-Website: http://www.wowinterface.com/downloads/info-GoFish.html
+## X-Website: http://www.wowinterface.com/downloads/info22270-GoFish.html
 ## X-Curse-Project-ID: gofish
-## X-WoWI-ID:
+## X-WoWI-ID: 22270
 
 ## SavedVariables: GoFishDB
 
