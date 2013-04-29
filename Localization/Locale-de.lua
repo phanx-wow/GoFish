@@ -13,9 +13,9 @@ local L, F = ns.L, ns.F
 
 ------------------------------------------------------------------------
 
--- L.FishingModeOff = "Fishing mode {ON}"
--- L.FishingModeOn = "Fishing mode {OFF}"
--- L.ToggleFishingMode = "Toggle fishing mode"
+--L.FishingModeOff = "Fishing mode {ON}"
+--L.FishingModeOn = "Fishing mode {OFF}"
+--L.ToggleFishingMode = "Toggle fishing mode"
 
 ------------------------------------------------------------------------
 
@@ -30,7 +30,7 @@ F["Bloodsail Wreckage Pool"] = "Ein Schwarm Blutsegelwrackteile"
 F["Bluefish School"] = "Blauflossenschwarm"
 F["Borean Man O' War School"] = "Ein Schwarm boreanischer Galeeren"
 F["Brackish Mixed School"] = "Brackwasserschwarm"
--- F["Crane Yolk Pool"] = "Crane Yolk Pool"
+--F["Crane Yolk Pool"] = "Crane Yolk Pool"
 F["Deep Sea Monsterbelly School"] = "Ein Schwarm Tiefseemonsterbäuche"
 F["Deepsea Sagefish School"] = "Ein Schwarm Tiefseeweisenfische"
 F["Dragonfin Angelfish School"] = "Engelsdrachenfischschwarm"
@@ -59,6 +59,7 @@ F["Lesser Firefin Snapper School"] = "Kleiner Feuerflossenschnapperschwarm"
 F["Lesser Floating Debris"] = "Lesser Floating Debris"
 F["Lesser Oily Blackmouth School"] = "Kleiner Schwarm öliger Schwarzmaulfische"
 F["Lesser Sagefish School"] = "Kleiner Weisenfischschwarm"
+--F["Mixed Ocean School"] = "Mixed Ocean School"
 F["Moonglow Cuttlefish School"] = "Ein Schwarm Mondlichtsepia"
 F["Mountain Trout School"] = "Ein Schwarm Bergforellen"
 F["Muddy Churning Water"] = "Schlammiges aufgewühltes Wasser"
