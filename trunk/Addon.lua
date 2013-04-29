@@ -62,6 +62,7 @@ local fishingPools = {
 	[ns.F["Lesser Floating Debris"]] = true,
 	[ns.F["Lesser Oily Blackmouth School"]] = true,
 	[ns.F["Lesser Sagefish School"]] = true,
+	[ns.F["Mixed Ocean School"]] = true,
 	[ns.F["Moonglow Cuttlefish School"]] = true,
 	[ns.F["Mountain Trout School"]] = true,
 	[ns.F["Muddy Churning Water"]] = true,
@@ -249,9 +250,7 @@ function GoFish:DisableFishingMode()
 	SetCVar("autoLootDefault", autoLoot)
 	autoLoot = nil
 
-	if autoStopTime then
-		autoStopTime = nil
-	end
+	autoStopTime = nil
 	print("|cff00ddbaGoFish:|r", L.FishingModeOff)
 end
 
@@ -272,9 +271,13 @@ function GoFish:PLAYER_LOGIN()
 
 	self:RegisterEvent("PLAYER_REGEN_DISABLED")
 	self:RegisterEvent("PLAYER_REGEN_ENABLED")
-	self:RegisterUnitEvent("UNIT_INVENTORY_CHANGED", "player")
+
 	self:RegisterUnitEvent("UNIT_SPELLCAST_CHANNEL_START", "player")
 	self:RegisterUnitEvent("UNIT_SPELLCAST_CHANNEL_STOP", "player")
+
+	if GoFishDB.ActivateOnEquip then
+		self:RegisterUnitEvent("UNIT_INVENTORY_CHANGED", "player")
+	end
 end
 
 function GoFish:PLAYER_LOGOUT()
@@ -293,9 +296,11 @@ function GoFish:PLAYER_REGEN_DISABLED()
 	--print("Combat START")
 	self:UnregisterEvent("UNIT_SPELLCAST_CHANNEL_START")
 	self:UnregisterEvent("UNIT_SPELLCAST_CHANNEL_STOP")
+
 	if UnitChannelInfo("unit") == FISHING then
 		self:UNIT_SPELLCAST_CHANNEL_STOP("player", FISHING)
 	end
+
 	if isFishing then
 		self:DisableFishingMode()
 	end
@@ -309,8 +314,13 @@ function GoFish:PLAYER_REGEN_ENABLED()
 		hasBinding = nil
 		--print("Override binding cleared")
 	end
+
 	self:RegisterUnitEvent("UNIT_SPELLCAST_CHANNEL_START", "player")
 	self:RegisterUnitEvent("UNIT_SPELLCAST_CHANNEL_STOP", "player")
+
+	if GoFishDB.ActivateOnEquip and IsEquippedItemType(FISHING_POLE) then
+		self:EnableFishingMode()
+	end
 end
 
 ------------------------------------------------------------------------
@@ -320,7 +330,7 @@ function GoFish:UNIT_SPELLCAST_CHANNEL_START(unit, spell)
 		--print("Fishing START")
 		EnhanceSounds()
 		if autoStopTime then
-			autoStopTime = GetTime() + 1000 --print("Fishing...")
+			autoStopTime = GetTime() + 1000000
 		end
 	end
 end
@@ -330,7 +340,7 @@ function GoFish:UNIT_SPELLCAST_CHANNEL_STOP(unit, spell)
 		--print("Fishing STOP")
 		RestoreSounds()
 		if autoStopTime then
-			autoStopTime = GetTime() + 10 --print("Ending in 10 seconds")
+			autoStopTime = GetTime() + GoFishDB.MouseoverTimeout
 		end
 	end
 end
@@ -361,7 +371,7 @@ local timer = timerGroup:CreateAnimation()
 timer:SetDuration(1)
 timerGroup:SetScript("OnFinished", function(self, requested)
 	if not isFishing or not autoStopTime then return end
-	if GetTime() > autoStopTime then --print("Timeout reached")
+	if GetTime() > autoStopTime then
 		GoFish:DisableFishingMode()
 		autoStopTime = nil
 	else
@@ -370,7 +380,7 @@ timerGroup:SetScript("OnFinished", function(self, requested)
 end)
 
 GameTooltip:HookScript("OnShow", function(self)
-	if isFishing then return end
+	if isFishing or not GoFishDB.ActivateOnMouseover then return end
 
 	local text = GameTooltipTextLeft1:GetText()
 	if not text or not fishingPools[text] or self:GetItem() or self:GetUnit() or IsMounted() or IsInCombat() or UnitIsDeadOrGhost("player") then return end
@@ -378,7 +388,7 @@ GameTooltip:HookScript("OnShow", function(self)
 	GoFish:EnableFishingMode()
 	if not isFishing then return end
 
-	autoStopTime = GetTime() + 10 --print("Ending in 10 seconds")
+	autoStopTime = GetTime() + GoFishDB.MouseoverTimeout
 	timerGroup:Play()
 end)
 
