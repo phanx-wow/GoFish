@@ -9,7 +9,7 @@
 ## X-Copyright: Copyright (c) 2013 Phanx. All rights reserved.
 ## X-License: See accompanying LICENSE file for details.
 ## X-CompatibleLocales: deDE, enUS, esES, esMX, frFR, itIT, koKR, ptBR, ptPT, ruRU, zhCN, zhTW
-## X-Localizations: deDE, enUS, esES, esMX, frFR, itIT, koKR, ptBR, ptPT, ruRU, zhCN, zhTWs
+## X-Localizations: deDE, enUS, esES, esMX, frFR, itIT, koKR, ptBR, ptPT, ruRU, zhCN, zhTW
 ## X-Website: http://www.wowinterface.com/downloads/info22270-GoFish.html
 ## X-Curse-Project-ID: gofish
 ## X-WoWI-ID: 22270
@@ -28,3 +28,4 @@ Localization\Locale-zhCN.lua
 Localization\Locale-zhTW.lua
 
 Addon.lua
+Options.lua

@@ -18,6 +18,9 @@ BINDING_NAME_GOFISH_TOGGLE = L.ToggleFishingMode
 
 ------------------------------------------------------------------------
 
+local FISHING = GetSpellInfo(131474)
+local FISHING_POLE = select(7, GetItemInfo(6256))
+
 local fishingPools = {
 	[ns.F["Abundant Bloodsail Wreckage"]] = true,
 	[ns.F["Abundant Firefin Snapper School"]] = true,
@@ -98,37 +101,60 @@ local fishingPools = {
 ------------------------------------------------------------------------
 
 local autoInteract		-- was autoInteract ON before we started fishing mode?
-local autoLoot          -- was autoLoot OFF before we started fishing mode?
+local autoLoot          -- was autoLootDefault OFF before we started fishing mode?
 local autoStopTime      -- GetTime() to turn off auto-enabled fishing mode
 local clearBinding		-- was combat started mid-click, leaving us stuck in fishing mode?
 local isFishing			-- is fishing mode on?
 local hasBinding		-- are we in the middle of a double-click to fish?
 
-------------------------------------------------------------------------
+local normalCVars = {}
 
-local FISHING = GetSpellInfo(131474)
-local FISHING_POLE = select(7, GetItemInfo(6256))
-
-------------------------------------------------------------------------
-
-local normalValues = {}
-
-local fishingValues = {
-	Sound_EnableAllSound = 1,
-	Sound_EnableSFX = 1,
-	Sound_EnableErrorSpeech = 0,
-	Sound_EnableEmoteSounds = 0,
-	Sound_EnablePetSounds = 0,
-	Sound_MasterVolume = 0.25,
-	Sound_SFXVolume = 0.5,
-	Sound_MusicVolume = 1,
-	Sound_AmbienceVolume = 0.25,
+local defaults = {
+	EnhanceSounds = true,
+	ActivateOnEquip = true,
+	ActivateOnMouseover = true,
+	MouseoverTimeout = 10,
+	CVars = {
+		Sound_EnableAllSound = 1,
+		Sound_EnableSFX = 1,
+		Sound_EnableErrorSpeech = 0,
+		Sound_EnableEmoteSounds = 0,
+		Sound_EnablePetSounds = 0,
+		Sound_MasterVolume = 0.5,
+		Sound_SFXVolume = 1,
+		Sound_MusicVolume = 0.25,
+		Sound_AmbienceVolume = 0,
+	}
 }
+GoFishDB = defaults -- TEMP
 
 ------------------------------------------------------------------------
 
 local function IsInCombat()
 	return InCombatLockdown() or UnitAffectingCombat("player") or UnitAffectingCombat("pet")
+end
+
+local function EnhanceSounds()
+	if next(normalCVars) then
+		return
+	end
+	for cvar, value in pairs(GoFishDB.CVars) do
+		local v = tonumber(GetCVar(cvar))
+		if v then
+			normalCVars[cvar] = floor(v * 100) / 100
+			SetCVar(cvar, value)
+		end
+	end
+end
+
+local function RestoreSounds()
+	if not next(normalCVars) then
+		return
+	end
+	for cvar, value in pairs(normalCVars) do
+		SetCVar(cvar, value)
+		normalCVars[cvar] = nil
+	end
 end
 
 ------------------------------------------------------------------------
@@ -201,14 +227,13 @@ function GoFish:EnableFishingMode()
 		self:SetupClickHook()
 		self:RegisterEvent("PLAYER_LOGOUT")
 	end
-	if GetCVarBool("autointeract") then
-		SetCVar("autointeract", 0)
-		autoInteract = 1
-	end
-	if not GetCVarBool("autoLootDefault") then
-		SetCVar("autoLootDefault", 1)
-		autoLoot = 1
-	end
+
+	autoInteract = GetCVar("autointeract")
+	SetCVar("autointeract", 0)
+
+	autoLoot = GetCVarBool("autoLootDefault")
+	SetCVar("autoLootDefault", 1)
+
 	isFishing = true
 	print("|cff00ddbaGoFish:|r", L.FishingModeOn)
 end
@@ -216,14 +241,14 @@ end
 function GoFish:DisableFishingMode()
 	if not isFishing then return end
 	isFishing = nil
-	if autoInteract then
-		SetCVar("autointeract", 1)
-		autoInteract = nil
-	end
-	if autoLoot then
-		SetCVar("autoLootDefault", 0)
-		autoLoot = nil
-	end
+	RestoreSounds()
+
+	SetCVar("autointeract", autoInteract)
+	autoInteract = nil
+
+	SetCVar("autoLootDefault", autoLoot)
+	autoLoot = nil
+
 	if autoStopTime then
 		autoStopTime = nil
 	end
@@ -247,16 +272,16 @@ function GoFish:PLAYER_LOGIN()
 
 	self:RegisterEvent("PLAYER_REGEN_DISABLED")
 	self:RegisterEvent("PLAYER_REGEN_ENABLED")
+	self:RegisterUnitEvent("UNIT_INVENTORY_CHANGED", "player")
 	self:RegisterUnitEvent("UNIT_SPELLCAST_CHANNEL_START", "player")
 	self:RegisterUnitEvent("UNIT_SPELLCAST_CHANNEL_STOP", "player")
-	self:RegisterUnitEvent("UNIT_INVENTORY_CHANGED", "player")
 end
 
 function GoFish:PLAYER_LOGOUT()
 	--print("LOGOUT")
 	if isFishing then
 		-- Restore cvars
-		self:UNIT_SPELLCAST_CHANNEL_STOP("player", FISHING)
+		RestoreSounds()
 		-- Clear binding
 		self:DisableFishingMode()
 	end
@@ -293,12 +318,9 @@ end
 function GoFish:UNIT_SPELLCAST_CHANNEL_START(unit, spell)
 	if spell == FISHING then
 		--print("Fishing START")
+		EnhanceSounds()
 		if autoStopTime then
 			autoStopTime = GetTime() + 1000 --print("Fishing...")
-		end
-		for k, v in pairs(fishingValues) do
-			normalValues[k] = GetCVar(k)
-			SetCVar(k, v)
 		end
 	end
 end
@@ -306,11 +328,9 @@ end
 function GoFish:UNIT_SPELLCAST_CHANNEL_STOP(unit, spell)
 	if spell == FISHING then
 		--print("Fishing STOP")
+		RestoreSounds()
 		if autoStopTime then
 			autoStopTime = GetTime() + 10 --print("Ending in 10 seconds")
-		end
-		for k, v in pairs(normalValues) do
-			SetCVar(k, v)
 		end
 	end
 end
@@ -341,7 +361,7 @@ local timer = timerGroup:CreateAnimation()
 timer:SetDuration(1)
 timerGroup:SetScript("OnFinished", function(self, requested)
 	if not isFishing or not autoStopTime then return end
-	if GetTime() > autoStopTime then
+	if GetTime() > autoStopTime then --print("Timeout reached")
 		GoFish:DisableFishingMode()
 		autoStopTime = nil
 	else
@@ -368,7 +388,7 @@ SLASH_GOFISH1 = "/gofish"
 SlashCmdList.GOFISH = function(cmd)
 	cmd = cmd and strtrim(strlower(cmd))
 	if cmd == "options" then
-		-- open options
+		ns.ShowOptions()
 	elseif not IsInCombat() then
 		GoFish:ToggleFishingMode()
 	end
