@@ -8,17 +8,6 @@ Mouseover timeout 5 - 60 x 5
 local ADDON, ns = ...
 local L = ns.L
 
-L.EnhanceSounds = "Enhance sound effects while fishing"
-L.EnhanceSounds_Tooltip = "To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."
-L.MasterVolume = MASTER_VOLUME
-L.MasterVolume_Tooltip = "Adjusts the master volume while fishing."
-L.SFXVolume = SOUND_VOLUME
-L.SFXVolume_Tooltip = "Adjusts the sound effect volume while fishing."
-L.MusicVolume = MUSIC_VOLUME
-L.MusicVolume_Tooltip = "Adjusts the music volume while fishing."
-L.AmbienceVolume = AMBIENCE_VOLUME
-L.AmbienceVolume_Tooltip = "Adjusts the ambient sound volume while fishing."
-
 local Options = CreateFrame("Frame", "GoFishOptions", InterfaceOptionsFramePanelContainer)
 Options.name = GetAddOnMetadata(ADDON, "Title") or ADDON
 InterfaceOptions_AddCategory(Options)
@@ -48,8 +37,33 @@ Options:SetScript("OnShow", function()
 	SubText:SetJustifyV("TOP")
 	SubText:SetText(GetAddOnMetadata(ADDON, "Notes"))
 
+	local ActivateOnMouseover = CreateFrame("CheckButton", "$parentActivateOnMouseover", Options, "InterfaceOptionsCheckButtonTemplate")
+	ActivateOnMouseover:SetPoint("TOPLEFT", SubText, "BOTTOMLEFT", 0, -12)
+	ActivateOnMouseover.Text:SetText(L.ActivateOnMouseover)
+	ActivateOnMouseover.tooltipText = L.ActivateOnMouseover_Tooltip
+	ActivateOnMouseover:SetScript("OnClick", function(this)
+		local checked = not not this:GetChecked()
+		PlaySound(checked and "igMainMenuOptionCheckBoxOn" or "igMainmenuOptionCheckBoxOff")
+		GoFishDB.ActivateOnMouseover = checked
+	end)
+
+	local ActivateOnEquip = CreateFrame("CheckButton", "$parentActivateOnEquip", Options, "InterfaceOptionsCheckButtonTemplate")
+	ActivateOnEquip:SetPoint("TOPLEFT", ActivateOnMouseover, "BOTTOMLEFT", 0, -12)
+	ActivateOnEquip.Text:SetText(L.ActivateOnEquip)
+	ActivateOnEquip.tooltipText = L.ActivateOnEquip_Tooltip
+	ActivateOnEquip:SetScript("OnClick", function(this)
+		local checked = not not this:GetChecked()
+		PlaySound(checked and "igMainMenuOptionCheckBoxOn" or "igMainmenuOptionCheckBoxOff")
+		GoFishDB.ActivateOnEquip = checked
+		if checked then
+			GoFish:RegisterUnitEvent("UNIT_INVENTORY_CHANGED", "player")
+		else
+			GoFish:UnregisterEvent("UNIT_INVENTORY_CHANGED")
+		end
+	end)
+
 	local EnhanceSounds = CreateFrame("CheckButton", "$parentEnhanceSounds", Options, "InterfaceOptionsCheckButtonTemplate")
-	EnhanceSounds:SetPoint("TOPLEFT", SubText, "BOTTOMLEFT", -2, -8)
+	EnhanceSounds:SetPoint("TOPLEFT", ActivateOnEquip, "BOTTOMLEFT", 0, -12)
 	EnhanceSounds.Text:SetText(L.EnhanceSounds)
 	EnhanceSounds.tooltipText = L.EnhanceSounds_Tooltip
 	EnhanceSounds:SetScript("OnClick", function(this)
@@ -93,7 +107,7 @@ Options:SetScript("OnShow", function()
 	MasterVolume:SetValueStep(5)
 	MasterVolume.low:SetText("0%")
 	MasterVolume.high:SetText("100%")
-	MasterVolume.text:SetText(L.MasterVolume)
+	MasterVolume.text:SetText(MASTER_VOLUME)
 	MasterVolume.tooltipText = L.MasterVolume_Tooltip
 	MasterVolume:SetScript("OnValueChanged", function(self, value)
 		value = floor(value + 0.5)
@@ -107,7 +121,7 @@ Options:SetScript("OnShow", function()
 	SFXVolume:SetValueStep(5)
 	SFXVolume.low:SetText("0%")
 	SFXVolume.high:SetText("100%")
-	SFXVolume.text:SetText(L.SFXVolume)
+	SFXVolume.text:SetText(SOUND_VOLUME)
 	SFXVolume.tooltipText = L.SFXVolume_Tooltip
 	SFXVolume:SetScript("OnValueChanged", function(self, value)
 		value = floor(value + 0.5)
@@ -121,7 +135,7 @@ Options:SetScript("OnShow", function()
 	MusicVolume:SetValueStep(5)
 	MusicVolume.low:SetText("0%")
 	MusicVolume.high:SetText("100%")
-	MusicVolume.text:SetText(L.MusicVolume)
+	MusicVolume.text:SetText(MUSIC_VOLUME)
 	MusicVolume.tooltipText = L.MusicVolume_Tooltip
 	MusicVolume:SetScript("OnValueChanged", function(self, value)
 		value = floor(value + 0.5)
@@ -135,7 +149,7 @@ Options:SetScript("OnShow", function()
 	AmbienceVolume:SetValueStep(5)
 	AmbienceVolume.low:SetText("0%")
 	AmbienceVolume.high:SetText("100%")
-	AmbienceVolume.text:SetText(L.AmbienceVolume)
+	AmbienceVolume.text:SetText(AMBIENCE_VOLUME)
 	AmbienceVolume.tooltipText = L.AmbienceVolume_Tooltip
 	AmbienceVolume:SetScript("OnValueChanged", function(self, value)
 		value = floor(value + 0.5)

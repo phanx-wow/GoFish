@@ -127,7 +127,6 @@ local defaults = {
 		Sound_AmbienceVolume = 0,
 	}
 }
-GoFishDB = defaults -- TEMP
 
 ------------------------------------------------------------------------
 
@@ -266,15 +265,29 @@ end
 
 function GoFish:PLAYER_LOGIN()
 	--print("LOGIN")
+	local function initDB(a, b)
+		if type(a) ~= "table" then return {} end
+		if type(b) ~= "table" then b = {} end
+		for k, v in pairs(a) do
+			if type(v) == "table" then
+				b[k] = initDB(v, b[k])
+			elseif type(b[k]) ~= type(v) then
+				b[k] = v
+			end
+		end
+		return b
+	end
+	GoFishDB = initDB(defaults, GoFishDB)
+
 	FISHING = GetSpellInfo(131474)
 	FISHING_POLE = select(7, GetItemInfo(6256))
 
+	self:UnregisterEvent("PLAYER_LOGIN")
+	self:RegisterEvent("PLAYER_LOGOUT")
 	self:RegisterEvent("PLAYER_REGEN_DISABLED")
 	self:RegisterEvent("PLAYER_REGEN_ENABLED")
-
 	self:RegisterUnitEvent("UNIT_SPELLCAST_CHANNEL_START", "player")
 	self:RegisterUnitEvent("UNIT_SPELLCAST_CHANNEL_STOP", "player")
-
 	if GoFishDB.ActivateOnEquip then
 		self:RegisterUnitEvent("UNIT_INVENTORY_CHANGED", "player")
 	end
@@ -282,12 +295,7 @@ end
 
 function GoFish:PLAYER_LOGOUT()
 	--print("LOGOUT")
-	if isFishing then
-		-- Restore cvars
-		RestoreSounds()
-		-- Clear binding
-		self:DisableFishingMode()
-	end
+	self:DisableFishingMode()
 end
 
 ------------------------------------------------------------------------
