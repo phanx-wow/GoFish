@@ -17,6 +17,17 @@ L.FishingModeOff = "Pesca rápida {activó}"
 L.FishingModeOn = "Pesca rápida {desactivó}"
 L.ToggleFishingMode = "Activar/desactivar pesca rápida"
 
+L.ActivateOnMouseover = "Activa al pasar el ratón sobre banco"
+L.ActivateOnMouseover_Tooltip = "Activar automáticamente el modo de pesca al pasar el ratón sobre un banco de peces. Cuando se activa este manera, el modo de pesca se desactiva si no pescas durante 10 segundos."
+L.ActivateOnEquip = "Activa al equipar una caña de pescar"
+L.ActivateOnEquip_Tooltip = "Activar automáticamente el modo de pesca mientras que tienes equipada una caña de pescar."
+L.EnhanceSounds = "Mejora los efectos de sonido"
+L.EnhanceSounds_Tooltip = "Para escuchar mejor el sonido del cebo, suba los efectos de sonido, y baja la música y el sonido ambiental. Los niveles originales de sonido se restauran después de la pesca."
+L.MasterVolume_Tooltip = "Ajusta el volumen general del sonido."
+L.SFXVolume_Tooltip = "Ajusta el volumen de los efectos de sonido."
+L.MusicVolume_Tooltip = "Ajusta el volumen de la música."
+L.AmbienceVolume_Tooltip = "Ajusta el volumen del sonido ambiental."
+
 ------------------------------------------------------------------------
 
 F["Abundant Bloodsail Wreckage"] = "Restos de los Velasangre Abundantes"
