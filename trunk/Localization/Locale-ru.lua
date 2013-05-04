@@ -41,6 +41,7 @@ F["Bloodsail Wreckage Pool"] = "Обломки кораблекрушения К
 F["Bluefish School"] = "Косяк луфаря"
 F["Borean Man O' War School"] = "Косяк борейского медузника"
 F["Brackish Mixed School"] = "Косяк сквернохвоста"
+--F["Brew Frenzied Emperor Salmon"] = "Brew Frenzied Emperor Salmon"
 --F["Crane Yolk Pool"] = "Crane Yolk Pool"
 F["Deep Sea Monsterbelly School"] = "Косяк глубоководного чертобрюха"
 F["Deepsea Sagefish School"] = "Косяк глубоководного шалфокуня"
