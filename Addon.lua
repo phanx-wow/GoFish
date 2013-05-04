@@ -33,6 +33,7 @@ local fishingPools = {
 	[ns.F["Bluefish School"]] = true,
 	[ns.F["Borean Man O' War School"]] = true,
 	[ns.F["Brackish Mixed School"]] = true,
+	[ns.F["Brew Frenzied Emperor Salmon"]] = true,
 	[ns.F["Crane Yolk Pool"]] = true,
 	[ns.F["Deep Sea Monsterbelly School"]] = true,
 	[ns.F["Deepsea Sagefish School"]] = true,
