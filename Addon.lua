@@ -392,7 +392,11 @@ GameTooltip:HookScript("OnShow", function(self)
 	if isFishing or not GoFishDB.ActivateOnMouseover then return end
 
 	local text = GameTooltipTextLeft1:GetText()
-	if not text or not fishingPools[text] or self:GetItem() or self:GetUnit() or IsMounted() or IsInCombat() or UnitIsDeadOrGhost("player") then return end
+
+	if not text or not fishingPools[text] -- or self:GetItem() or self:GetUnit()
+	or IsMounted() or IsInCombat() or UnitInVehicle("player") or UnitIsDeadOrGhost("player") then
+		return
+	end
 
 	GoFish:EnableFishingMode()
 	if not isFishing then return end
