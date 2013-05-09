@@ -92,6 +92,7 @@ local fishingPools = {
 	[ns.F["Steam Pump Flotsam"]] = true,
 	[ns.F["Stonescale Eel Swarm"]] = true,
 	[ns.F["Strange Pool"]] = true,
+	[ns.F["Swarm of Panicked Paddlefish"]] = true,
 	[ns.F["Teeming Firefin Snapper School"]] = true,
 	[ns.F["Teeming Floating Wreckage"]] = true,
 	[ns.F["Teeming Oily Blackmouth School"]] = true,
