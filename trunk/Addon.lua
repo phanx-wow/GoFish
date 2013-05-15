@@ -69,6 +69,7 @@ local fishingPools = {
 	[ns.F["Muddy Churning Water"]] = true,
 	[ns.F["Mudfish School"]] = true,
 	[ns.F["Musselback Sculpin School"]] = true,
+	[ns.F["Mysterious Whirlpool"]] = true,
 	[ns.F["Nettlefish School"]] = true,
 	[ns.F["Oil Spill"]] = true,
 	[ns.F["Oily Blackmouth School"]] = true,
