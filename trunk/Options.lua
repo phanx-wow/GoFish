@@ -158,19 +158,18 @@ Options:SetScript("OnShow", function()
 	end)
 
 	function Options:refresh()
-		print("GoFishOptions refresh")
+		ActivateOnMouseover:SetChecked(GoFishDB.ActivateOnMouseover)
+		ActivateOnEquip:SetChecked(GoFishDB.ActivateOnEquip)
+
 		EnhanceSounds:SetChecked(GoFishDB.EnhanceSounds)
-
 		MasterVolume:SetEnabled(GoFishDB.EnhanceSounds)
-		MasterVolume:SetValue(GoFishDB.CVars.Sound_MasterVolume * 100)
-
 		SFXVolume:SetEnabled(GoFishDB.EnhanceSounds)
-		SFXVolume:SetValue(GoFishDB.CVars.Sound_SFXVolume * 100)
-
 		MusicVolume:SetEnabled(GoFishDB.EnhanceSounds)
-		MusicVolume:SetValue(GoFishDB.CVars.Sound_MusicVolume * 100)
-
 		AmbienceVolume:SetEnabled(GoFishDB.EnhanceSounds)
+
+		MasterVolume:SetValue(GoFishDB.CVars.Sound_MasterVolume * 100)
+		SFXVolume:SetValue(GoFishDB.CVars.Sound_SFXVolume * 100)
+		MusicVolume:SetValue(GoFishDB.CVars.Sound_MusicVolume * 100)
 		AmbienceVolume:SetValue(GoFishDB.CVars.Sound_AmbienceVolume * 100)
 	end
 
