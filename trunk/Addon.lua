@@ -22,7 +22,7 @@ local FISHING = GetSpellInfo(131474)
 local FISHING_POLE = select(7, GetItemInfo(6256))
 
 local F = ns.F
-local fishingPools = {
+F = {
 	-- TODO: Get name for special Reef Octopus pools
 	-- TODO: Add large special pools ?
 	[F["Abundant Bloodsail Wreckage"]] = true,
@@ -111,7 +111,6 @@ local fishingPools = {
 	[F["Waterlogged Wreckage Pool"]] = true,
 	[F["Waterlogged Wreckage"]] = true,
 }
-F = nil
 
 ------------------------------------------------------------------------
 
@@ -149,7 +148,7 @@ local function IsInCombat()
 end
 
 local function EnhanceSounds()
-	if next(normalCVars) then
+	if not GoFishDB.EnhanceSounds or next(normalCVars) then
 		return
 	end
 	for cvar, value in pairs(GoFishDB.CVars) do
@@ -162,7 +161,7 @@ local function EnhanceSounds()
 end
 
 local function RestoreSounds()
-	if not next(normalCVars) then
+	if not GoFishDB.EnhanceSounds or not next(normalCVars) then
 		return
 	end
 	for cvar, value in pairs(normalCVars) do
