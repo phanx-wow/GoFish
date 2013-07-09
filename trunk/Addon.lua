@@ -405,7 +405,7 @@ GameTooltip:HookScript("OnShow", function(self)
 
 	local text = GameTooltipTextLeft1:GetText()
 
-	if not text or not fishingPools[text] -- or self:GetItem() or self:GetUnit()
+	if not text or not F[text] -- or self:GetItem() or self:GetUnit()
 	or IsMounted() or IsInCombat() or UnitInVehicle("player") or UnitIsDeadOrGhost("player") then
 		return
 	end
