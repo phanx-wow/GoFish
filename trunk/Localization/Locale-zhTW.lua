@@ -7,7 +7,7 @@
 	http://www.curse.com/addons/wow/gofish
 ----------------------------------------------------------------------]]
 
-if GetLocale() ~= "deDE" then return end
+if GetLocale() ~= "zhTW" then return end
 local _, ns = ...
 local L, F = ns.L, ns.F
 
