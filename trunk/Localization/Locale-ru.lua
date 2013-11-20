@@ -18,7 +18,7 @@ local L, F = ns.L, ns.F
 --L.ToggleFishingMode = "Toggle fishing mode"
 
 --L.ActivateOnMouseover = "Activate when mousing over a fish pool"
---L.ActivateOnMouseover_Tooltip = "Automatically turn on fishing mode when you mouse over a fish poo--L. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."
+--L.ActivateOnMouseover_Tooltip = "Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."
 --L.ActivateOnEquip = "Activate when equipping a fishing pole"
 --L.ActivateOnEquip_Tooltip = "Automatically turn on fishing mode while you have a fishing pole equipped."
 --L.EnhanceSounds = "Enhance sound effects while fishing"
