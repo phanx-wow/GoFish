@@ -13,20 +13,20 @@ local L, F = ns.L, ns.F
 
 ------------------------------------------------------------------------
 
---L.FishingModeOff = "Fishing mode {ON}"
---L.FishingModeOn = "Fishing mode {OFF}"
---L.ToggleFishingMode = "Toggle fishing mode"
+L.FishingModeOff = "Schnellangeln {AN}"
+L.FishingModeOn = "Schnellangeln {AUS}"
+L.ToggleFishingMode = "Schnellangeln umschalten"
 
---L.ActivateOnMouseover = "Activate when mousing over a fish pool"
---L.ActivateOnMouseover_Tooltip = "Automatically turn on fishing mode when you mouse over a fish poo--L. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."
---L.ActivateOnEquip = "Activate when equipping a fishing pole"
---L.ActivateOnEquip_Tooltip = "Automatically turn on fishing mode while you have a fishing pole equipped."
---L.EnhanceSounds = "Enhance sound effects while fishing"
---L.EnhanceSounds_Tooltip = "To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."
---L.MasterVolume_Tooltip = "Adjusts the master volume while fishing."
---L.SFXVolume_Tooltip = "Adjusts the sound effect volume while fishing."
---L.MusicVolume_Tooltip = "Adjusts the music volume while fishing."
---L.AmbienceVolume_Tooltip = "Adjusts the ambient sound volume while fishing."
+L.ActivateOnMouseover = "Bei Mouseover von Schwärmen aktivieren"
+L.ActivateOnMouseover_Tooltip = "Automatisch Schnellangeln aktivieren wenn du einen Schwarm hoverst. Solltest du nicht innerhalb 10 Sekunden angeln, deaktiviert der Modus automatisch."
+L.ActivateOnEquip = "Aktivieren beim Ausrüsten einer Angel"
+L.ActivateOnEquip_Tooltip = "Automatisch Schnellangeln aktivieren wenn du eine Angel trägst."
+L.EnhanceSounds = "Soundeffekte verstärken wenn du angelst"
+L.EnhanceSounds_Tooltip = "Um den Köder besser zu hören, erhöht die Lautstärke und reduziert Musik und Umgebungsgeräusche. Deine normalen Einstellungen werden nach dem Angeln wiederhergestellt."
+L.MasterVolume_Tooltip = "Gesamtlautstärke beim Angeln anpassen."
+L.SFXVolume_Tooltip = "Effektlautstärke beim Angeln anpassen."
+L.MusicVolume_Tooltip = "Musiklautstärke beim Angeln anpassen."
+L.AmbienceVolume_Tooltip = "Umgebungsgeräusche beim Angeln anpassen."
 
 ------------------------------------------------------------------------
 
