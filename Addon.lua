@@ -401,7 +401,7 @@ timerGroup:SetScript("OnFinished", function(self, requested)
 end)
 
 GameTooltip:HookScript("OnShow", function(self)
-	if isFishing or not GoFishDB.ActivateOnMouseover then return end
+	if isFishing or not GoFishDB or not GoFishDB.ActivateOnMouseover then return end
 
 	local text = GameTooltipTextLeft1:GetText()
 
