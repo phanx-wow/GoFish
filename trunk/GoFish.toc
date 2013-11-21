@@ -1,15 +1,18 @@
-## Interface: 50300
-## Version: 5.3.0.wowi:revision
+## Interface: 50400
+## Version: 5.4.1.wowi:revision
 
 ## Title: GoFish
 ## Notes: Click-cast fishing and enhanced fishing sounds.
+## Notes-deDE: Angelt schnell per Doppelklick, und erhöht Fischerei Soundeffekte.
+## Notes-esES: Pesca rápidamente haciendo doble clic, y aumenta los sonidos de pesca.
+## Notes-esMX: Pesca rápidamente haciendo doble clic, y aumenta los sonidos de pesca.
 
 ## Author: Phanx
 ## X-Email: addons@phanx.net
 ## X-Copyright: Copyright (c) 2013 Phanx. All rights reserved.
 ## X-License: See accompanying LICENSE file for details.
 ## X-CompatibleLocales: deDE, enUS, esES, esMX, frFR, itIT, koKR, ptBR, ptPT, ruRU, zhCN, zhTW
-## X-Localizations: deDE, enUS, esES, esMX, frFR, itIT, koKR, ptBR, ptPT, ruRU, zhCN, zhTW
+## X-Localizations: deDE, enUS, esES, esMX, zhTW
 ## X-Website: http://www.wowinterface.com/downloads/info22270-GoFish.html
 ## X-Curse-Project-ID: gofish
 ## X-WoWI-ID: 22270
