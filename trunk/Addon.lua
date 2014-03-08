@@ -1,7 +1,7 @@
 --[[--------------------------------------------------------------------
 	GoFish
 	Click-cast fishing and enhanced fishing sounds.
-	Copyright (c) 2013 Phanx <addons@phanx.net>. All rights reserved.
+	Copyright (c) 2013-2014 Phanx <addons@phanx.net>. All rights reserved.
 	See the accompanying README and LICENSE files for more information.
 	http://www.wowinterface.com/downloads/info22270-GoFish.html
 	http://www.curse.com/addons/wow/gofish
@@ -13,7 +13,7 @@ local L = ns.L
 L.FishingModeOff = L.FishingModeOff:gsub("{", GRAY_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
 L.FishingModeOn  = L.FishingModeOn:gsub("{", GREEN_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
 
-BINDING_HEADER_GOFISH      = GetAddOnMetadata(ADDON, "Title") or ADDON
+BINDING_HEADER_GOFISH = GetAddOnMetadata(ADDON, "Title") or ADDON
 BINDING_NAME_GOFISH_TOGGLE = L.ToggleFishingMode
 
 ------------------------------------------------------------------------
@@ -145,6 +145,14 @@ local defaults = {
 
 local function IsInCombat()
 	return InCombatLockdown() or UnitAffectingCombat("player") or UnitAffectingCombat("pet")
+end
+
+local function IsFishingPoleEquipped()
+	-- Some people's game clients are broken?
+	if not FISHING_POLE then
+		FISHING_POLE = select(7, GetItemInfo(6256))
+	end
+	return IsEquippedItemType(FISHING_POLE or "Fishing Pole")
 end
 
 local function EnhanceSounds()
@@ -292,6 +300,7 @@ function GoFish:PLAYER_LOGIN()
 	end
 	GoFishDB = initDB(defaults, GoFishDB)
 
+	-- Call again in case they weren't cached before:
 	FISHING = GetSpellInfo(131474)
 	FISHING_POLE = select(7, GetItemInfo(6256))
 
@@ -339,7 +348,7 @@ function GoFish:PLAYER_REGEN_ENABLED()
 	self:RegisterUnitEvent("UNIT_SPELLCAST_CHANNEL_START", "player")
 	self:RegisterUnitEvent("UNIT_SPELLCAST_CHANNEL_STOP", "player")
 
-	if GoFishDB.ActivateOnEquip and IsEquippedItemType(FISHING_POLE) then
+	if GoFishDB.ActivateOnEquip and IsFishingPoleEquipped() then
 		self:EnableFishingMode()
 	end
 end
@@ -371,7 +380,7 @@ end
 local hasPole
 
 function GoFish:UNIT_INVENTORY_CHANGED(unit)
-	local pole = IsEquippedItemType(FISHING_POLE)
+	local pole = IsFishingPoleEquipped()
 	if pole == hasPole then return end
 	hasPole = pole
 
