@@ -152,7 +152,7 @@ local function IsFishingPoleEquipped()
 	if not FISHING_POLE then
 		FISHING_POLE = select(7, GetItemInfo(6256))
 	end
-	return IsEquippedItemType(FISHING_POLE or "Fishing Pole")
+	return IsEquippedItemType(FISHING_POLE or UNKNOWN)
 end
 
 local function EnhanceSounds()
