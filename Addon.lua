@@ -409,13 +409,20 @@ timerGroup:SetScript("OnFinished", function(self, requested)
 	end
 end)
 
+local farSight = {
+	[(GetSpellInfo(6197))] = true, -- Eagle Eye
+	[(GetSpellInfo(126))]  = true, -- Eye of Kilrogg
+	[(GetSpellInfo(6196))] = true, -- Far Sight
+	[(GetSpellInfo(2096))] = true, -- Mind Vision
+}
+
 GameTooltip:HookScript("OnShow", function(self)
 	if isFishing or not GoFishDB or not GoFishDB.ActivateOnMouseover then return end
 
 	local text = GameTooltipTextLeft1:GetText()
 
 	if not text or not F[text] -- or self:GetItem() or self:GetUnit()
-	or IsMounted() or IsInCombat() or UnitInVehicle("player") or UnitIsDeadOrGhost("player") then
+	or IsMounted() or IsInCombat() or UnitInVehicle("player") or UnitIsDeadOrGhost("player") or farSight[UnitChannelInfo("player") or ""] then
 		return
 	end
 
