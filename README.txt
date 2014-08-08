@@ -1,15 +1,5 @@
-
 GoFish
-===========
-
-* Copyright (c) 2013-2014 Phanx <addons@phanx.net>. All rights reserved.
-* See the accompanying LICENSE file for more information.
-* http://www.wowinterface.com/downloads/info22270-GoFish.html
-* http://www.curse.com/addons/wow/gofish
-
-
-Description
-----------------
+=========
 
 GoFish lets you double-right-click anywhere on the game world to fish,
 and enhances sound effects while fishing.
@@ -24,37 +14,58 @@ GoFish does not support lures or other skill-enhancing items, as these
 are not neccessary or especially useful in Mists of Pandaria.
 
 
+Download
+--------------
+
+* [WoWInterface](http://www.wowinterface.com/downloads/info22270-GoFish.html)
+* [Curse](http://www.curse.com/addons/wow/gofish)
+
+
 Usage
----------
+--------
 
 Type "/gofish" or bind a key to toggle fishing mode manually. Options
 to adjust fishing sound levels will be added in the near future. Other
 options or additional features are not planned.
 
 
-Feedback
--------------
-
-Please refer to the download page for instructions on how to report bugs
-or request features. For general questions or feedback, post a comment
-on the download page. Do not PM or email me about addon issues.
-
-
 Localization
------------------
+---------------
 
-Compatible with English, Deutsch, Español, Français, Italiano, Português,
-Русский, 한국어, 简体中文, and 繁體中文 game clients.
+Compatible with English, Deutsch, Español, Français, Italiano,
+Português, Русский, 한국어, 简体中文, and 繁體中文 game clients.
 
 Translated into English and Español.
 
-Add or update translations for any language on CurseForge:
-http://wow.curseforge.com/addons/gofish/localization/
+Add or update translations for any language on CurseForge:  
+<http://wow.curseforge.com/addons/gofish/localization/>
 
 
 Credits
------------
+----------
 
 GoFish was inspired by Ammo's FishermansFriend. The click-casting code
 borrows heavily from Torhal's Archy. Fish school name translations were
 copied from Kagaro's GatherMate2.
+
+
+Feedback
+-----------
+
+Post a ticket on either download site, or a comment on WoWInterface.
+
+If you are reporting a bug, please include directions I can follow to
+reproduce the bug, whether it still happens when all other addons are
+disabled, and the exact text of the related error message (if any) from 
+[BugSack](http://www.wowinterface.com/downloads/info5995-BugSack.html).
+
+If you need to contact me privately, you can send me a private message
+on either download site, or email me at <addons@phanx.net>.
+
+
+License
+----------
+
+Copyright (c) 2013-2014 Phanx. All rights reserved.  
+See the accompanying LICENSE file for information about the conditions
+under which redistribution and modification may be allowed.
