@@ -66,6 +66,6 @@ on either download site, or email me at <addons@phanx.net>.
 License
 ----------
 
-Copyright (c) 2013-2014 Phanx <addons@phanx.net>. All rights reserved.
+Copyright (c) 2013-2014 Phanx. All rights reserved.  
 See the accompanying LICENSE file for information about the conditions
 under which redistribution and modification may be allowed.
