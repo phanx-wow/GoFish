@@ -1,5 +1,5 @@
 <Bindings>
-	<Binding name="GOFISH_TOGGLE" header="GOFISH" category="GOFISH">
+	<Binding name="GOFISH_TOGGLE" header="GOFISH" header="ADDONS">
 		GoFish:ToggleFishingMode()
 	</Binding>
 </Bindings>
