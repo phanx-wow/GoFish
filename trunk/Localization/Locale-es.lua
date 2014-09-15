@@ -13,8 +13,8 @@ local L, F = ns.L, ns.F
 
 ------------------------------------------------------------------------
 
-L.FishingModeOff = "Pesca rápida {activó}"
-L.FishingModeOn = "Pesca rápida {desactivó}"
+L.FishingModeOn = "Pesca rápida {activó}"
+L.FishingModeOff = "Pesca rápida {desactivó}"
 L.ToggleFishingMode = "Activar/desactivar pesca rápida"
 
 L.ActivateOnMouseover = "Activa al pasar el ratón sobre banco"
