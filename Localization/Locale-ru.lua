@@ -13,8 +13,8 @@ local L, F = ns.L, ns.F
 
 ------------------------------------------------------------------------
 
---L.FishingModeOff = "Fishing mode {ON}"
---L.FishingModeOn = "Fishing mode {OFF}"
+--L.FishingModeOn = "Fishing mode {ON}"
+--L.FishingModeOff = "Fishing mode {OFF}"
 --L.ToggleFishingMode = "Toggle fishing mode"
 
 --L.ActivateOnMouseover = "Activate when mousing over a fish pool"

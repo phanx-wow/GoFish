@@ -13,8 +13,8 @@ local L, F = ns.L, ns.F
 
 ------------------------------------------------------------------------
 
-L["FishingModeOff"] = "快速釣魚{OFF}"
 L["FishingModeOn"] = "快速釣魚{ON}"
+L["FishingModeOff"] = "快速釣魚{OFF}"
 L["ToggleFishingMode"] = "開關快速釣魚"
 
 L["ActivateOnEquip"] = "當裝備一個釣魚竿時啟動"

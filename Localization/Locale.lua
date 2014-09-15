@@ -13,8 +13,8 @@ ns.L, ns.F = L, F
 
 ------------------------------------------------------------------------
 
-L.FishingModeOff = "Quick fishing {OFF}"
 L.FishingModeOn = "Quick fishing {ON}"
+L.FishingModeOff = "Quick fishing {OFF}"
 L.ToggleFishingMode = "Toggle quick fishing"
 
 L.ActivateOnMouseover = "Activate when mousing over a fish pool"

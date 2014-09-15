@@ -13,8 +13,8 @@ local L, F = ns.L, ns.F
 
 ------------------------------------------------------------------------
 
-L.FishingModeOff = "Schnellangeln {AN}"
-L.FishingModeOn = "Schnellangeln {AUS}"
+L.FishingModeOn = "Schnellangeln {AN}"
+L.FishingModeOff = "Schnellangeln {AUS}"
 L.ToggleFishingMode = "Schnellangeln umschalten"
 
 L.ActivateOnMouseover = "Bei Mouseover von Schwärmen aktivieren"
