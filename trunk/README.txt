@@ -57,7 +57,7 @@ Post a ticket on either download site, or a comment on WoWInterface.
 If you are reporting a bug, please include directions I can follow to
 reproduce the bug, whether it still happens when all other addons are
 disabled, and the exact text of the related error message (if any) from 
-[BugSack](http://www.wowinterface.com/downloads/info5995-BugSack.html).
+[Bugger](http://www.wowinterface.com/downloads/info23144-Bugger.html).
 
 If you need to contact me privately, you can send me a private message
 on either download site, or email me at <addons@phanx.net>.
