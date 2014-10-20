@@ -114,12 +114,12 @@ F = {
 
 ------------------------------------------------------------------------
 
-local autoInteract		-- was autoInteract ON before we started fishing mode?
-local autoLoot          -- was autoLootDefault OFF before we started fishing mode?
-local autoStopTime      -- GetTime() to turn off auto-enabled fishing mode
-local clearBinding		-- was combat started mid-click, leaving us stuck in fishing mode?
-local isFishing			-- is fishing mode on?
-local hasBinding		-- are we in the middle of a double-click to fish?
+local autoInteract -- was autoInteract ON before we started fishing mode?
+local autoLoot     -- was autoLootDefault OFF before we started fishing mode?
+local autoStopTime -- GetTime() to turn off auto-enabled fishing mode
+local clearBinding -- was combat started mid-click, leaving us stuck in fishing mode?
+local isFishing    -- is fishing mode on?
+local hasBinding   -- are we in the middle of a double-click to fish?
 
 local normalCVars = {}
 
@@ -252,7 +252,7 @@ function GoFish:EnableFishingMode()
 	autoInteract = GetCVar("autointeract")
 	SetCVar("autointeract", 0)
 
-	autoLoot = GetCVarBool("autoLootDefault")
+	autoLoot = GetCVar("autoLootDefault")
 	SetCVar("autoLootDefault", 1)
 
 	isFishing = true
