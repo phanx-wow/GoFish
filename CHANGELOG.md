@@ -1,3 +1,7 @@
+### Version 6.0.3.10
+
+* Added Draenor fish pools (some translations missing)
+
 ### Version 6.0.2.46
 
 * Fixed disabling auto-loot after fishing if it was off beforehand (why!?)

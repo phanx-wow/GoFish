@@ -5,4 +5,5 @@ manual-changelog:
    markup-type: markdown
 
 ignore:
+   - CHANGELOG.md
    - README.md

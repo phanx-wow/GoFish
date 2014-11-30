@@ -1,5 +1,5 @@
 ## Interface: 60000
-## Version: 6.0.2.wowi:revision
+## Version: @project-version@
 
 ## Title: GoFish
 ## Notes: Click-cast fishing and enhanced fishing sounds.
