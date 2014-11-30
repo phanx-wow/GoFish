@@ -109,6 +109,19 @@ F = {
 	[F["Tiger Gourami Slush"]] = true,
 	[F["Waterlogged Wreckage Pool"]] = true,
 	[F["Waterlogged Wreckage"]] = true,
+	-- Warlords of Draenor
+	[F["Abyssal Gulper School"]] = true,
+	[F["Blackwater Whiptail School"]] = true,
+	[F["Blind Lake Sturgeon School"]] = true,
+	[F["Fat Sleeper School"]] = true,
+	[F["Fire Ammonite School"]] = true,
+	[F["Jawless Skulker School"]] = true,
+	[F["Lagoon Pool"]] = true,
+	[F["Oily Abyssal Gulper School"]] = true,
+	[F["Oily Sea Scorpion School"]] = true,
+	[F["Savage Piranha Pool"]] = true,
+	[F["Sea Scorpion School"]] = true,
+	[F["Sparkling Pool"]] = true,
 }
 
 ------------------------------------------------------------------------

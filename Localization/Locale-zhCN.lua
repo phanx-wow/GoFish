@@ -29,6 +29,18 @@ local L, F = ns.L, ns.F
 
 ------------------------------------------------------------------------
 
+--F["Abyssal Gulper School"] = ""
+--F["Blackwater Whiptail School"] = ""
+--F["Blind Lake Sturgeon School"] = ""
+--F["Fat Sleeper School"] = ""
+--F["Fire Ammonite School"] = ""
+--F["Jawless Skulker School"] = ""
+--F["Lagoon Pool"] = ""
+--F["Oily Abyssal Gulper School"] = ""
+--F["Oily Sea Scorpion School"] = ""
+--F["Savage Piranha Pool"] = ""
+--F["Sea Scorpion School"] = ""
+--F["Sparkling Pool"] = ""
 F["Abundant Bloodsail Wreckage"] = "大型的血帆残骸"
 F["Abundant Firefin Snapper School"] = "大型的火鳞鳝鱼群"
 F["Abundant Oily Blackmouth School"] = "大型的黑口鱼群"
