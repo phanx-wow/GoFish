@@ -14,16 +14,7 @@
 
 ## SavedVariables: GoFishDB
 
-Localization\Locale-en.lua
-Localization\Locale-de.lua
-Localization\Locale-es.lua
-Localization\Locale-fr.lua
-Localization\Locale-it.lua
-Localization\Locale-pt.lua
-Localization\Locale-ru.lua
-Localization\Locale-ko.lua
-Localization\Locale-zhCN.lua
-Localization\Locale-zhTW.lua
+Localization.lua
 
 Addon.lua
 Options.lua
