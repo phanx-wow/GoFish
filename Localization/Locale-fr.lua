@@ -1,7 +1,7 @@
 --[[--------------------------------------------------------------------
 	GoFish
 	Click-cast fishing and enhanced fishing sounds.
-	Copyright (c) 2013-2014 Phanx <addons@phanx.net>. All rights reserved.
+	Copyright (c) 2013-2015 Phanx <addons@phanx.net>. All rights reserved.
 	http://www.wowinterface.com/downloads/info22270-GoFish.html
 	http://www.curse.com/addons/wow/gofish
 ----------------------------------------------------------------------]]

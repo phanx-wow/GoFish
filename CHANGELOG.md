@@ -1,3 +1,7 @@
+### Version 6.0.3.11 (2015 Feb 18)
+
+* Updated fish pool translations for all languages
+
 ### Version 6.0.3.10 (2014 Nov 30)
 
 * Added Draenor fish pools (some translations missing)
