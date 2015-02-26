@@ -1,3 +1,8 @@
+### Version 6.1.0.12 (2015 Feb 26)
+
+* Updated for WoW 6.1
+* Fixed a bug allowing minimap tracking tooltips to activate fishing mode
+
 ### Version 6.0.3.11 (2015 Feb 18)
 
 * Updated fish pool translations for all languages
