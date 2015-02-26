@@ -428,7 +428,10 @@ timerGroup:SetScript("OnFinished", function(self, requested)
 	end
 end)
 
-local WorldFrame = WorldFrame -- ignore minimap tooltips
+local okparents = { -- ignore minimap tooltips
+	[WorldFrame] = true,
+	[UIParent] = true,
+}
 local farSight = {
 	[(GetSpellInfo(6197))] = true, -- Eagle Eye
 	[(GetSpellInfo(126))]  = true, -- Eye of Kilrogg
@@ -437,7 +440,7 @@ local farSight = {
 }
 
 GameTooltip:HookScript("OnShow", function(self)
-	if isFishing or not GoFishDB or not GoFishDB.ActivateOnMouseover or self:GetOwner() ~= WorldFrame then return end
+	if isFishing or not GoFishDB or not GoFishDB.ActivateOnMouseover or not okparents[self:GetOwner()] then return end
 
 	local text = GameTooltipTextLeft1:GetText()
 
