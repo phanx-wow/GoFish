@@ -438,14 +438,19 @@ local farSight = {
 	[(GetSpellInfo(6196))] = true, -- Far Sight
 	[(GetSpellInfo(2096))] = true, -- Mind Vision
 }
+local allowedForms = {
+	[0]  = true, -- none
+	[31] = true, -- Druid Moonkin Form
+	[30] = true, -- Rogue Stealth
+}
 
 GameTooltip:HookScript("OnShow", function(self)
 	if isFishing or not GoFishDB or not GoFishDB.ActivateOnMouseover or not okparents[self:GetOwner()] then return end
 
 	local text = GameTooltipTextLeft1:GetText()
 
-	if not text or not F[text] -- or self:GetItem() or self:GetUnit()
-	or IsMounted() or IsInCombat() or UnitInVehicle("player") or UnitIsDeadOrGhost("player") or farSight[UnitChannelInfo("player") or ""] then
+	if not text or not F[text] or IsMounted() or IsInCombat() or UnitInVehicle("player") or UnitIsDeadOrGhost("player") 
+	or not allowedForms[GetShapeshiftForm(true) or 0] or farSight[UnitChannelInfo("player") or ""] then
 		return
 	end
 
