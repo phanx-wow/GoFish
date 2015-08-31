@@ -46,6 +46,7 @@ F = {
 	[F["Fangtooth Herring School"]] = true,
 	[F["Fat Sleeper School"]] = true, -- WoD
 	[F["Fathom Eel Swarm"]] = true,
+	[F["Felmouth Frenzy School"]] = true, -- 6.2
 	[F["Feltail School"]] = true, -- removed?
 	[F["Fire Ammonite School"]] = true, -- WoD
 	[F["Firefin Snapper School"]] = true,
