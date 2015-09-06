@@ -142,6 +142,13 @@ local isFishing    -- is fishing mode on?
 local hasBinding   -- are we in the middle of a double-click to fish?
 
 local normalCVars = {}
+local extraCVars = { -- extra things to disable in fishing mode if sound was globally disabled
+	Sound_EnablePetSounds = 0,
+	Sound_EnableEmoteSounds = 0,
+	Sound_EnableMusic = 0,
+	Sound_EnableAmbience = 0,
+	Sound_EnableDialog = 0,
+}
 
 local defaults = {
 	EnhanceSounds = true,
@@ -179,12 +186,15 @@ local function EnhanceSounds()
 	if not GoFishDB.EnhanceSounds or next(normalCVars) then
 		return
 	end
-	for cvar, value in pairs(GoFishDB.CVars) do
-		local v = tonumber(GetCVar(cvar))
-		if v then
-			normalCVars[cvar] = floor(v * 100) / 100
-			SetCVar(cvar, value)
+	if GoFishDB.CVars.Sound_EnableAllSound and not GetCVarBool("Sound_EnableAllSound") then
+		for cvar, value in pairs(extraCVars) do
+			normalCVars[cvar] = GetCVar(cvar)
+			SetCVar(cvar, 0)
 		end
+	end
+	for cvar, value in pairs(GoFishDB.CVars) do
+		normalCVars[cvar] = GetCVar(cvar)
+		SetCVar(cvar, value)
 	end
 end
 
@@ -450,7 +460,7 @@ GameTooltip:HookScript("OnShow", function(self)
 
 	local text = GameTooltipTextLeft1:GetText()
 
-	if not text or not F[text] or IsMounted() or IsInCombat() or UnitInVehicle("player") or UnitIsDeadOrGhost("player") 
+	if not text or not F[text] or IsMounted() or IsInCombat() or UnitInVehicle("player") or UnitIsDeadOrGhost("player")
 	or not allowedForms[GetShapeshiftForm(true) or 0] or farSight[UnitChannelInfo("player") or ""] then
 		return
 	end
