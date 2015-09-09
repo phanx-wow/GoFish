@@ -7,130 +7,16 @@
 ----------------------------------------------------------------------]]
 
 local ADDON, ns = ...
-
+local FISHING = GetSpellInfo(131474)
+local FISHING_POLE = select(7, GetItemInfo(6256))
+local F = ns.F
 local L = ns.L
+
 L.FishingModeOff = L.FishingModeOff:gsub("{", GRAY_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
 L.FishingModeOn  = L.FishingModeOn:gsub("{", GREEN_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
 
 BINDING_HEADER_GOFISH = GetAddOnMetadata(ADDON, "Title") or ADDON
 BINDING_NAME_GOFISH_TOGGLE = L.ToggleFishingMode
-
-------------------------------------------------------------------------
-
-local FISHING = GetSpellInfo(131474)
-local FISHING_POLE = select(7, GetItemInfo(6256))
-
-local F = ns.F
-F = {
-	[F["Abundant Bloodsail Wreckage"]] = true, -- removed?
-	[F["Abundant Firefin Snapper School"]] = true, -- removed?
-	[F["Abundant Oily Blackmouth School"]] = true, -- removed?
-	[F["Abyssal Gulper School"]] = true, -- WoD
-	[F["Albino Cavefish School"]] = true,
-	[F["Algaefin Rockfish School"]] = true, -- removed?
-	[F["Blackbelly Mudfish School"]] = true,
-	[F["Blackwater Whiptail School"]] = true, -- WoD
-	[F["Blind Lake Sturgeon School"]] = true, -- WoD
-	[F["Bloodsail Wreckage Pool"]] = true, -- removed?
-	[F["Bloodsail Wreckage"]] = true,
-	[F["Bluefish School"]] = true,
-	[F["Borean Man O' War School"]] = true,
-	[F["Brackish Mixed School"]] = true,
-	[F["Brew Frenzied Emperor Salmon"]] = true,
-	[F["Crane Yolk Pool"]] = true,
-	[F["Crowded Redbelly Mandarin"]] = true,
-	[F["Deep Sea Monsterbelly School"]] = true,
-	[F["Deepsea Sagefish School"]] = true,
-	[F["Dragonfin Angelfish School"]] = true,
-	[F["Emperor Salmon School"]] = true,
-	[F["Fangtooth Herring School"]] = true,
-	[F["Fat Sleeper School"]] = true, -- WoD
-	[F["Fathom Eel Swarm"]] = true,
-	[F["Felmouth Frenzy School"]] = true, -- 6.2
-	[F["Feltail School"]] = true, -- removed?
-	[F["Fire Ammonite School"]] = true, -- WoD
-	[F["Firefin Snapper School"]] = true,
-	[F["Floating Debris Pool"]] = true, -- removed?
-	[F["Floating Debris"]] = true,
-	[F["Floating Shipwreck Debris"]] = true, -- removed?
-	[F["Floating Wreckage Pool"]] = true, -- removed?
-	[F["Floating Wreckage"]] = true,
-	[F["Giant Mantis Shrimp Swarm"]] = true,
-	[F["Glacial Salmon School"]] = true,
-	[F["Glassfin Minnow School"]] = true,
-	[F["Glimmering Jewel Danio Pool"]] = true,
-	[F["Glowing Jade Lungfish"]] = true,
-	[F["Golden Carp School"]] = true, -- removed?
-	[F["Greater Sagefish School"]] = true,
-	[F["Highland Guppy School"]] = true,
-	[F["Highland Mixed School"]] = true,
-	[F["Imperial Manta Ray School"]] = true,
-	[F["Jade Lungfish School"]] = true,
-	[F["Jawless Skulker School"]] = true, -- WoD
-	[F["Jewel Danio School"]] = true,
-	[F["Krasarang Paddlefish School"]] = true,
-	[F["Lagoon Pool"]] = true, -- WoD
-	[F["Large Pool of Brew Frenzied Emperor Salmon"]] = true,
-	[F["Large Pool of Crowded Redbelly Mandarin"]] = true,
-	[F["Large Pool of Glimmering Jewel Danio"]] = true,
-	[F["Large Pool of Glowing Jade Lungfish"]] = true,
-	[F["Large Pool of Sha-Touched Spinefish"]] = true,
-	[F["Large Pool of Tiger Gourami Slush"]] = true,
-	[F["Large Swarm of Migrated Reef Octopus"]] = true,
-	[F["Large Swarm of Panicked Paddlefish"]] = true,
-	[F["Large Tangled Mantis Shrimp Cluster"]] = true,
-	[F["Lesser Firefin Snapper School"]] = true, -- removed?
-	[F["Lesser Floating Debris"]] = true, -- removed?
-	[F["Lesser Oily Blackmouth School"]] = true, -- removed?
-	[F["Lesser Sagefish School"]] = true, -- removed?
-	[F["Mixed Ocean School"]] = true,
-	[F["Moonglow Cuttlefish School"]] = true,
-	[F["Mountain Trout School"]] = true,
-	[F["Muddy Churning Waters"]] = true, -- removed?
-	[F["Mudfish School"]] = true,
-	[F["Musselback Sculpin School"]] = true,
-	[F["Mysterious Whirlpool"]] = true, -- removed?
-	[F["Nettlefish School"]] = true,
-	[F["Oil Spill"]] = true, -- removed?
-	[F["Oily Abyssal Gulper School"]] = true, -- WoD
-	[F["Oily Blackmouth School"]] = true,
-	[F["Oily Sea Scorpion School"]] = true, -- WoD
-	[F["Patch of Elemental Water"]] = true,
-	[F["Pool of Blood"]] = true,
-	[F["Pool of Fire"]] = true,
-	[F["Pure Water"]] = true,
-	[F["Redbelly Mandarin School"]] = true,
-	[F["Reef Octopus Swarm"]] = true,
-	[F["Sagefish School"]] = true,
-	[F["Savage Piranha Pool"]] = true, -- WoD
-	[F["School of Darter"]] = true,
-	[F["School of Deviate Fish"]] = true,
-	[F["School of Tastyfish"]] = true, -- removed?
-	[F["Schooner Wreckage Pool"]] = true, -- removed?
-	[F["Schooner Wreckage"]] = true,
-	[F["Sea Scorpion School"]] = true, -- WoD
-	[F["Sha-Touched Spinefish"]] = true,
-	[F["Shipwreck Debris"]] = true,
-	[F["Sparkling Pool"]] = true, -- WoD
-	[F["Sparse Firefin Snapper School"]] = true, -- removed?
-	[F["Sparse Oily Blackmouth School"]] = true, -- removed?
-	[F["Sparse Schooner Wreckage"]] = true, -- removed?
-	[F["Spinefish School"]] = true,
-	[F["Sporefish School"]] = true,
-	[F["Steam Pump Flotsam"]] = true,
-	[F["Stonescale Eel Swarm"]] = true,
-	[F["Strange Pool"]] = true,
-	[F["Swarm of Migrated Reef Octopus"]] = true,
-	[F["Swarm of Panicked Paddlefish"]] = true,
-	[F["Tangled Mantid Shrimp Cluster"]] = true,
-	[F["Teeming Firefin Snapper School"]] = true, -- removed?
-	[F["Teeming Floating Wreckage"]] = true, -- removed?
-	[F["Teeming Oily Blackmouth School"]] = true, -- removed?
-	[F["Tiger Gourami School"]] = true,
-	[F["Tiger Gourami Slush"]] = true,
-	[F["Waterlogged Wreckage Pool"]] = true, -- removed?
-	[F["Waterlogged Wreckage"]] = true,
-}
 
 ------------------------------------------------------------------------
 

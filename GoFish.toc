@@ -15,6 +15,7 @@
 ## SavedVariables: GoFishDB
 
 Localization.lua
+Data.lua
 
 Addon.lua
 Options.lua
