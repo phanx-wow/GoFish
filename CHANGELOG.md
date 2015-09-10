@@ -1,3 +1,10 @@
+### Version 6.2.2.13 (2014 Sep 10)
+
+* Updated for WoW 6.2
+* Added Felmouth Frenzy School
+* Fishing mode will no longer be auto-activated while in shapeshift forms
+* When auto-enabling global sound for fishing mode, only Sound Effects will be enabled
+
 ### Version 6.1.0.12 (2015 Feb 26)
 
 * Updated for WoW 6.1
