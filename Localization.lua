@@ -15,6 +15,7 @@ ns.L = L
 ------------------------------------------------------------------------
 -- English
 ------------------------------------------------------------------------
+
 L.ActivateOnEquip = "Activate when equipping a fishing pole"
 L.ActivateOnEquip_Tooltip = "Automatically turn on fishing mode while you have a fishing pole equipped."
 L.ActivateOnMouseover = "Activate when mousing over a fish pool"
@@ -28,12 +29,16 @@ L.MasterVolume_Tooltip = "Adjusts the master volume while fishing."
 L.MusicVolume_Tooltip = "Adjusts the music volume while fishing."
 L.SFXVolume_Tooltip = "Adjusts the sound effect volume while fishing."
 L.ToggleFishingMode = "Toggle quick fishing"
+
 local CURRENT_LOCALE = GetLocale()
 if CURRENT_LOCALE == "enUS" then return end
+
 ------------------------------------------------------------------------
 -- German
 ------------------------------------------------------------------------
+
 if CURRENT_LOCALE == "deDE" then
+
 L.ActivateOnEquip = "Aktivieren beim Ausrüsten einer Angel"
 L.ActivateOnEquip_Tooltip = "Automatisch Schnellangeln aktivieren wenn du eine Angel trägst."
 L.ActivateOnMouseover = "Bei Mouseover von Schwärmen aktivieren"
@@ -47,11 +52,15 @@ L.MasterVolume_Tooltip = "Gesamtlautstärke beim Angeln anpassen"
 L.MusicVolume_Tooltip = "Passt die Musiklautstärke beim Angeln an."
 L.SFXVolume_Tooltip = "Passt die Effektlautstärke beim Angeln an."
 L.ToggleFishingMode = "Schnellangeln umschalten"
+
 return end
+
 ------------------------------------------------------------------------
 -- Spanish
 ------------------------------------------------------------------------
+
 if CURRENT_LOCALE == "esES" then
+
 L.ActivateOnEquip = "Activa al equipar una caña de pescar"
 L.ActivateOnEquip_Tooltip = "Activar automáticamente el modo de pesca mientras que tienes equipada una caña de pescar."
 L.ActivateOnMouseover = "Activa al pasar el ratón sobre banco"
@@ -65,11 +74,15 @@ L.MasterVolume_Tooltip = "Ajusta el volumen general del sonido mientras que est�
 L.MusicVolume_Tooltip = "Ajusta el volumen de la música mientras que estás pescando."
 L.SFXVolume_Tooltip = "Ajusta el volumen de los efectos de sonido mientras que estás pescando."
 L.ToggleFishingMode = "Activar/desactivar pesca rápida"
+
 return end
+
 ------------------------------------------------------------------------
 -- Latin American Spanish
 ------------------------------------------------------------------------
+
 if CURRENT_LOCALE == "esMX" then
+
 L.ActivateOnEquip = "Activa al equipar una caña de pescar"
 L.ActivateOnEquip_Tooltip = "Activar automáticamente el modo de pesca mientras que tienes equipada una caña de pescar."
 L.ActivateOnMouseover = "Activa al pasar el ratón sobre banco"
@@ -83,44 +96,67 @@ L.MasterVolume_Tooltip = "Ajusta el volumen general del sonido mientras que est�
 L.MusicVolume_Tooltip = "Ajusta el volumen de la música mientras que estás pescando."
 L.SFXVolume_Tooltip = "Ajusta el volumen de los efectos de sonido mientras que estás pescando."
 L.ToggleFishingMode = "Activar/desactivar pesca rápida"
+
 return end
+
 ------------------------------------------------------------------------
 -- French
 ------------------------------------------------------------------------
+
 if CURRENT_LOCALE == "frFR" then
+
 return end
+
 ------------------------------------------------------------------------
 -- Italian
 ------------------------------------------------------------------------
+
 if CURRENT_LOCALE == "itIT" then
+
 return end
+
 ------------------------------------------------------------------------
 -- Brazilian Portuguese
 ------------------------------------------------------------------------
+
 if CURRENT_LOCALE == "ptBR" then
+
 L.FishingModeOff = "Pesca rápida {ativou}"
 L.FishingModeOn = "Pesca rápida {desativou}"
 L.ToggleFishingMode = "Ativar/desativar pesca rápida"
+
 return end
+
 ------------------------------------------------------------------------
 -- Russian
 ------------------------------------------------------------------------
+
 if CURRENT_LOCALE == "ruRU" then
+
 return end
+
 ------------------------------------------------------------------------
 -- Korean
 ------------------------------------------------------------------------
+
 if CURRENT_LOCALE == "koKR" then
+
 return end
+
 ------------------------------------------------------------------------
 -- Simplified Chinese
 ------------------------------------------------------------------------
+
 if CURRENT_LOCALE == "zhCN" then
+
 return end
+
 ------------------------------------------------------------------------
 -- Traditional Chinese
 ------------------------------------------------------------------------
+
 if CURRENT_LOCALE == "zhTW" then
+
 L.ActivateOnEquip = "當裝備一個釣魚竿時啟動"
 L.ActivateOnEquip_Tooltip = "當你有裝備一個釣魚竿時，自動開啟釣魚模式。"
 L.ActivateOnMouseover = "當滑鼠指向一個魚池時啟動"
@@ -134,4 +170,5 @@ L.MasterVolume_Tooltip = "當釣魚時調整主音量。"
 L.MusicVolume_Tooltip = "當釣魚時調整音樂的音量。"
 L.SFXVolume_Tooltip = "當釣魚時調整音效的音量。"
 L.ToggleFishingMode = "開關快速釣魚"
+
 return end
