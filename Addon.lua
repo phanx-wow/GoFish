@@ -9,14 +9,14 @@
 local ADDON, ns = ...
 local FISHING = GetSpellInfo(131474)
 local FISHING_POLE = select(7, GetItemInfo(6256))
-local F = ns.F
-local L = ns.L
+local F = ns.F -- fish pool names
+local L = ns.L -- localized strings for display
 
-L.FishingModeOff = L.FishingModeOff:gsub("{", GRAY_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
-L.FishingModeOn  = L.FishingModeOn:gsub("{", GREEN_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
+L["Quick fishing {OFF}"] = L["Quick fishing {OFF}"]:gsub("{",  GRAY_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
+L["Quick fishing {ON}"]  = L["Quick fishing {ON}" ]:gsub("{", GREEN_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
 
 BINDING_HEADER_GOFISH = GetAddOnMetadata(ADDON, "Title") or ADDON
-BINDING_NAME_GOFISH_TOGGLE = L.ToggleFishingMode
+BINDING_NAME_GOFISH_TOGGLE = L["Toggle quick fishing"]
 
 ------------------------------------------------------------------------
 
@@ -172,7 +172,7 @@ function GoFish:EnableFishingMode()
 	SetCVar("autoLootDefault", 1)
 
 	isFishing = true
-	print("|cff00ddbaGoFish:|r", L.FishingModeOn)
+	print("|cff00ddbaGoFish:|r", L["Quick fishing {ON}"])
 end
 
 function GoFish:DisableFishingMode()
@@ -187,7 +187,7 @@ function GoFish:DisableFishingMode()
 	autoLoot = nil
 
 	autoStopTime = nil
-	print("|cff00ddbaGoFish:|r", L.FishingModeOff)
+	print("|cff00ddbaGoFish:|r", L["Quick fishing {OFF}"])
 end
 
 function GoFish:ToggleFishingMode()

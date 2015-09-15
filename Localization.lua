@@ -16,20 +16,6 @@ ns.L = L
 -- English
 ------------------------------------------------------------------------
 
-L.ActivateOnEquip = "Activate when equipping a fishing pole"
-L.ActivateOnEquip_Tooltip = "Automatically turn on fishing mode while you have a fishing pole equipped."
-L.ActivateOnMouseover = "Activate when mousing over a fish pool"
-L.ActivateOnMouseover_Tooltip = "Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."
-L.AmbienceVolume_Tooltip = "Adjusts the ambient sound volume while fishing."
-L.EnhanceSounds = "Enhance sound effects while fishing"
-L.EnhanceSounds_Tooltip = "To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."
-L.FishingModeOff = "Quick fishing {OFF}"
-L.FishingModeOn = "Quick fishing {ON}"
-L.MasterVolume_Tooltip = "Adjusts the master volume while fishing."
-L.MusicVolume_Tooltip = "Adjusts the music volume while fishing."
-L.SFXVolume_Tooltip = "Adjusts the sound effect volume while fishing."
-L.ToggleFishingMode = "Toggle quick fishing"
-
 local CURRENT_LOCALE = GetLocale()
 if CURRENT_LOCALE == "enUS" then return end
 
@@ -39,19 +25,19 @@ if CURRENT_LOCALE == "enUS" then return end
 
 if CURRENT_LOCALE == "deDE" then
 
-L.ActivateOnEquip = "Aktivieren beim Ausrüsten einer Angel"
-L.ActivateOnEquip_Tooltip = "Automatisch Schnellangeln aktivieren wenn du eine Angel trägst."
-L.ActivateOnMouseover = "Bei Mouseover von Schwärmen aktivieren"
-L.ActivateOnMouseover_Tooltip = "Automatisch Schnellangeln aktivieren wenn du einen Schwarm hoverst. Solltest du nicht innerhalb 10 Sekunden angeln, deaktiviert der Modus automatisch."
-L.AmbienceVolume_Tooltip = "Passt Umgebungsgeräusche an, während du angelst."
-L.EnhanceSounds = "Soundeffekte verstärken wenn du angelst"
-L.EnhanceSounds_Tooltip = "Um den Köder besser zu hören, erhöht die Lautstärke und reduziert Musik und Umgebungsgeräusche. Deine normalen Einstellungen werden nach dem Angeln wiederhergestellt."
-L.FishingModeOff = "Schnellangeln {AUS}"
-L.FishingModeOn = "Schnellangeln {AN}"
-L.MasterVolume_Tooltip = "Gesamtlautstärke beim Angeln anpassen"
-L.MusicVolume_Tooltip = "Passt die Musiklautstärke beim Angeln an."
-L.SFXVolume_Tooltip = "Passt die Effektlautstärke beim Angeln an."
-L.ToggleFishingMode = "Schnellangeln umschalten"
+L["Activate when equipping a fishing pole"] = "Aktivieren beim Ausrüsten einer Angel"
+L["Activate when mousing over a fish pool"] = "Bei Mouseover von Schwärmen aktivieren"
+L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "Passt Umgebungsgeräusche an, während du angelst."
+L["Adjusts the master volume while fishing."] = "Gesamtlautstärke beim Angeln anpassen"
+L["Adjusts the music volume while fishing. For best results, turn it down."] = "Passt die Musiklautstärke beim Angeln an. Für beste Ergebnisse, mach sie leiser."
+L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "Passt die Effektlautstärke beim Angeln an. Für beste Ergebnisse, mach sie lauter."
+L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "Automatisch Schnellangeln aktivieren wenn du einen Schwarm hoverst. Solltest du nicht innerhalb 10 Sekunden angeln, deaktiviert der Modus automatisch."
+L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "Automatisch Schnellangeln aktivieren wenn du eine Angel trägst."
+L["Enhance sound effects while fishing"] = "Soundeffekte verstärken wenn du angelst"
+L["Quick fishing {OFF}"] = "Schnellangeln {AUS}"
+L["Quick fishing {ON}"] = "Schnellangeln {AN}"
+L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Um den Köder besser zu hören, erhöht die Lautstärke und reduziert Musik und Umgebungsgeräusche. Deine normalen Einstellungen werden nach dem Angeln wiederhergestellt."
+L["Toggle quick fishing"] = "Schnellangeln umschalten"
 
 return end
 
@@ -61,19 +47,19 @@ return end
 
 if CURRENT_LOCALE == "esES" then
 
-L.ActivateOnEquip = "Activa al equipar una caña de pescar"
-L.ActivateOnEquip_Tooltip = "Activar automáticamente el modo de pesca mientras que tienes equipada una caña de pescar."
-L.ActivateOnMouseover = "Activa al pasar el ratón sobre banco"
-L.ActivateOnMouseover_Tooltip = "Activar automáticamente el modo de pesca al pasar el ratón sobre un banco de peces. Cuando se activa este manera, el modo de pesca se desactiva si no pescas durante 10 segundos."
-L.AmbienceVolume_Tooltip = "Ajusta el volumen del sonido ambiental mientras que estás pescando."
-L.EnhanceSounds = "Mejora los efectos de sonido"
-L.EnhanceSounds_Tooltip = "Para escuchar mejor el sonido del cebo, suba los efectos de sonido, y baja la música y el sonido ambiental. Los niveles originales de sonido se restauran después de la pesca."
-L.FishingModeOff = "Pesca rápida {activó}"
-L.FishingModeOn = "Pesca rápida {desactivó}"
-L.MasterVolume_Tooltip = "Ajusta el volumen general del sonido mientras que estás pescando."
-L.MusicVolume_Tooltip = "Ajusta el volumen de la música mientras que estás pescando."
-L.SFXVolume_Tooltip = "Ajusta el volumen de los efectos de sonido mientras que estás pescando."
-L.ToggleFishingMode = "Activar/desactivar pesca rápida"
+L["Activate when equipping a fishing pole"] = "Activa al equipar una caña de pescar"
+L["Activate when mousing over a fish pool"] = "Activa al pasar el ratón sobre banco"
+L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "Ajusta el volumen del sonido ambiental mientras que estás pescando. Para mejores resultados, bajalo."
+L["Adjusts the master volume while fishing."] = "Ajusta el volumen general del sonido mientras que estás pescando."
+L["Adjusts the music volume while fishing. For best results, turn it down."] = "Ajusta el volumen de la música mientras que estás pescando. Para mejores resultados, bajalo."
+L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "Ajusta el volumen de los efectos de sonido mientras que estás pescando. Para mejores resultados, subalo."
+L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "Activar automáticamente el modo de pesca al pasar el ratón sobre un banco de peces. Cuando se activa este manera, el modo de pesca se desactiva si no pescas durante 10 segundos."
+L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "Activar automáticamente el modo de pesca mientras que tienes equipada una caña de pescar."
+L["Enhance sound effects while fishing"] = "Mejora los efectos de sonido"
+L["Quick fishing {OFF}"] = "Pesca rápida {activó}"
+L["Quick fishing {ON}"] = "Pesca rápida {desactivó}"
+L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Para escuchar mejor el sonido del cebo, suba los efectos de sonido, y baja la música y el sonido ambiental. Los niveles originales de sonido se restauran después de la pesca."
+L["Toggle quick fishing"] = "Activar/desactivar pesca rápida"
 
 return end
 
@@ -83,19 +69,19 @@ return end
 
 if CURRENT_LOCALE == "esMX" then
 
-L.ActivateOnEquip = "Activa al equipar una caña de pescar"
-L.ActivateOnEquip_Tooltip = "Activar automáticamente el modo de pesca mientras que tienes equipada una caña de pescar."
-L.ActivateOnMouseover = "Activa al pasar el ratón sobre banco"
-L.ActivateOnMouseover_Tooltip = "Activar automáticamente el modo de pesca al pasar el ratón sobre un banco de peces. Cuando se activa este manera, el modo de pesca se desactiva si no pescas durante 10 segundos."
-L.AmbienceVolume_Tooltip = "Ajusta el volumen del sonido ambiental mientras que estás pescando."
-L.EnhanceSounds = "Mejora los efectos de sonido"
-L.EnhanceSounds_Tooltip = "Para escuchar mejor el sonido del cebo, suba los efectos de sonido, y baja la música y el sonido ambiental. Los niveles originales de sonido se restauran después de la pesca."
-L.FishingModeOff = "Pesca rápida {activó}"
-L.FishingModeOn = "Pesca rápida {desactivó}"
-L.MasterVolume_Tooltip = "Ajusta el volumen general del sonido mientras que estás pescando."
-L.MusicVolume_Tooltip = "Ajusta el volumen de la música mientras que estás pescando."
-L.SFXVolume_Tooltip = "Ajusta el volumen de los efectos de sonido mientras que estás pescando."
-L.ToggleFishingMode = "Activar/desactivar pesca rápida"
+L["Activate when equipping a fishing pole"] = "Activa al equipar una caña de pescar"
+L["Activate when mousing over a fish pool"] = "Activa al pasar el ratón sobre banco"
+L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "Ajusta el volumen del sonido ambiental mientras que estás pescando. Para mejores resultados, bajalo."
+L["Adjusts the master volume while fishing."] = "Ajusta el volumen general del sonido mientras que estás pescando."
+L["Adjusts the music volume while fishing. For best results, turn it down."] = "Ajusta el volumen de la música mientras que estás pescando. Para mejores resultados, bajalo."
+L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "Ajusta el volumen de los efectos de sonido mientras que estás pescando. Para mejores resultados, subalo."
+L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "Activar automáticamente el modo de pesca al pasar el ratón sobre un banco de peces. Cuando se activa este manera, el modo de pesca se desactiva si no pescas durante 10 segundos."
+L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "Activar automáticamente el modo de pesca mientras que tienes equipada una caña de pescar."
+L["Enhance sound effects while fishing"] = "Mejora los efectos de sonido"
+L["Quick fishing {OFF}"] = "Pesca rápida {activó}"
+L["Quick fishing {ON}"] = "Pesca rápida {desactivó}"
+L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Para escuchar mejor el sonido del cebo, suba los efectos de sonido, y baja la música y el sonido ambiental. Los niveles originales de sonido se restauran después de la pesca."
+L["Toggle quick fishing"] = "Activar/desactivar pesca rápida"
 
 return end
 
@@ -121,9 +107,9 @@ return end
 
 if CURRENT_LOCALE == "ptBR" then
 
-L.FishingModeOff = "Pesca rápida {ativou}"
-L.FishingModeOn = "Pesca rápida {desativou}"
-L.ToggleFishingMode = "Ativar/desativar pesca rápida"
+L["Quick fishing {OFF}"] = "Pesca rápida {ativou}"
+L["Quick fishing {ON}"] = "Pesca rápida {desativou}"
+L["Toggle quick fishing"] = "Ativar/desativar pesca rápida"
 
 return end
 
@@ -157,18 +143,18 @@ return end
 
 if CURRENT_LOCALE == "zhTW" then
 
-L.ActivateOnEquip = "當裝備一個釣魚竿時啟動"
-L.ActivateOnEquip_Tooltip = "當你有裝備一個釣魚竿時，自動開啟釣魚模式。"
-L.ActivateOnMouseover = "當滑鼠指向一個魚池時啟動"
-L.ActivateOnMouseover_Tooltip = "當你滑鼠指向一個魚池自動開啟釣魚模式，當以此途徑啟動時，如果10秒沒動作之後釣魚模式將關閉。"
-L.AmbienceVolume_Tooltip = "當釣魚時調整環境的音量。"
-L.EnhanceSounds = "當釣魚時提高音效"
-L.EnhanceSounds_Tooltip = "為更好的聽到釣魚浮標的飛濺聲，提高音效的音量，並同時降低音樂與環境的音量。當釣魚結束後音效會恢復原來的水平。"
-L.FishingModeOff = "快速釣魚{OFF}"
-L.FishingModeOn = "快速釣魚{ON}"
-L.MasterVolume_Tooltip = "當釣魚時調整主音量。"
-L.MusicVolume_Tooltip = "當釣魚時調整音樂的音量。"
-L.SFXVolume_Tooltip = "當釣魚時調整音效的音量。"
-L.ToggleFishingMode = "開關快速釣魚"
+L["Activate when equipping a fishing pole"] = "當裝備一個釣魚竿時啟動"
+L["Activate when mousing over a fish pool"] = "當滑鼠指向一個魚池時啟動"
+L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "當釣魚時調整環境的音量。"
+L["Adjusts the master volume while fishing."] = "當釣魚時調整主音量。"
+L["Adjusts the music volume while fishing. For best results, turn it down."] = "當釣魚時調整音樂的音量。"
+L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "當釣魚時調整音效的音量。"
+L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "當你滑鼠指向一個魚池自動開啟釣魚模式，當以此途徑啟動時，如果10秒沒動作之後釣魚模式將關閉。"
+L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "當你有裝備一個釣魚竿時，自動開啟釣魚模式。"
+L["Enhance sound effects while fishing"] = "當釣魚時提高音效"
+L["Quick fishing {OFF}"] = "快速釣魚{OFF}"
+L["Quick fishing {ON}"] = "快速釣魚{ON}"
+L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "為更好的聽到釣魚浮標的飛濺聲，提高音效的音量，並同時降低音樂與環境的音量。當釣魚結束後音效會恢復原來的水平。"
+L["Toggle quick fishing"] = "開關快速釣魚"
 
 return end

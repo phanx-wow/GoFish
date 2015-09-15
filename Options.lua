@@ -42,8 +42,8 @@ Options:SetScript("OnShow", function()
 
 	local ActivateOnMouseover = CreateFrame("CheckButton", "$parentActivateOnMouseover", Options, "InterfaceOptionsCheckButtonTemplate")
 	ActivateOnMouseover:SetPoint("TOPLEFT", SubText, "BOTTOMLEFT", 0, -12)
-	ActivateOnMouseover.Text:SetText(L.ActivateOnMouseover)
-	ActivateOnMouseover.tooltipText = L.ActivateOnMouseover_Tooltip
+	ActivateOnMouseover.Text:SetText(L["Activate when mousing over a fish pool"])
+	ActivateOnMouseover.tooltipText = L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."]
 	ActivateOnMouseover:SetScript("OnClick", function(this)
 		local checked = not not this:GetChecked()
 		PlaySound(checked and "igMainMenuOptionCheckBoxOn" or "igMainmenuOptionCheckBoxOff")
@@ -52,8 +52,8 @@ Options:SetScript("OnShow", function()
 
 	local ActivateOnEquip = CreateFrame("CheckButton", "$parentActivateOnEquip", Options, "InterfaceOptionsCheckButtonTemplate")
 	ActivateOnEquip:SetPoint("TOPLEFT", ActivateOnMouseover, "BOTTOMLEFT", 0, -12)
-	ActivateOnEquip.Text:SetText(L.ActivateOnEquip)
-	ActivateOnEquip.tooltipText = L.ActivateOnEquip_Tooltip
+	ActivateOnEquip.Text:SetText(L["Activate when equipping a fishing pole"])
+	ActivateOnEquip.tooltipText = L["Automatically turn on fishing mode while you have a fishing pole equipped."]
 	ActivateOnEquip:SetScript("OnClick", function(this)
 		local checked = not not this:GetChecked()
 		PlaySound(checked and "igMainMenuOptionCheckBoxOn" or "igMainmenuOptionCheckBoxOff")
@@ -67,8 +67,8 @@ Options:SetScript("OnShow", function()
 
 	local EnhanceSounds = CreateFrame("CheckButton", "$parentEnhanceSounds", Options, "InterfaceOptionsCheckButtonTemplate")
 	EnhanceSounds:SetPoint("TOPLEFT", ActivateOnEquip, "BOTTOMLEFT", 0, -12)
-	EnhanceSounds.Text:SetText(L.EnhanceSounds)
-	EnhanceSounds.tooltipText = L.EnhanceSounds_Tooltip
+	EnhanceSounds.Text:SetText(L["Enhance sound effects while fishing"])
+	EnhanceSounds.tooltipText = L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."]
 	EnhanceSounds:SetScript("OnClick", function(this)
 		local checked = not not this:GetChecked()
 		PlaySound(checked and "igMainMenuOptionCheckBoxOn" or "igMainmenuOptionCheckBoxOff")
@@ -110,7 +110,7 @@ Options:SetScript("OnShow", function()
 	MasterVolume.low:SetText("0%")
 	MasterVolume.high:SetText("100%")
 	MasterVolume.text:SetText(MASTER_VOLUME)
-	MasterVolume.tooltipText = L.MasterVolume_Tooltip
+	MasterVolume.tooltipText = L["Adjusts the master volume while fishing."]
 	MasterVolume:SetScript("OnValueChanged", function(self, value)
 		value = floor(value + 0.5)
 		self.value:SetText(value .. "%")
@@ -124,7 +124,7 @@ Options:SetScript("OnShow", function()
 	SFXVolume.low:SetText("0%")
 	SFXVolume.high:SetText("100%")
 	SFXVolume.text:SetText(SOUND_VOLUME)
-	SFXVolume.tooltipText = L.SFXVolume_Tooltip
+	SFXVolume.tooltipText = L["Adjusts the sound effect volume while fishing. For best results, turn it up."]
 	SFXVolume:SetScript("OnValueChanged", function(self, value)
 		value = floor(value + 0.5)
 		self.value:SetText(value .. "%")
@@ -138,7 +138,7 @@ Options:SetScript("OnShow", function()
 	MusicVolume.low:SetText("0%")
 	MusicVolume.high:SetText("100%")
 	MusicVolume.text:SetText(MUSIC_VOLUME)
-	MusicVolume.tooltipText = L.MusicVolume_Tooltip
+	MusicVolume.tooltipText = L["Adjusts the music volume while fishing. For best results, turn it down."]
 	MusicVolume:SetScript("OnValueChanged", function(self, value)
 		value = floor(value + 0.5)
 		self.value:SetText(value .. "%")
@@ -152,7 +152,7 @@ Options:SetScript("OnShow", function()
 	AmbienceVolume.low:SetText("0%")
 	AmbienceVolume.high:SetText("100%")
 	AmbienceVolume.text:SetText(AMBIENCE_VOLUME)
-	AmbienceVolume.tooltipText = L.AmbienceVolume_Tooltip
+	AmbienceVolume.tooltipText = L["Adjusts the ambient sound volume while fishing. For best results, turn it down."]
 	AmbienceVolume:SetScript("OnValueChanged", function(self, value)
 		value = floor(value + 0.5)
 		self.value:SetText(value .. "%")
