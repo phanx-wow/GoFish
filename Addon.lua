@@ -229,6 +229,7 @@ function GoFish:PLAYER_LOGIN()
 	if GoFishDB.ActivateOnEquip then
 		self:RegisterUnitEvent("UNIT_INVENTORY_CHANGED", "player")
 	end
+	self:RegisterEvent("PET_BATTLE_OPENING_START")
 end
 
 function GoFish:PLAYER_LOGOUT()
@@ -305,6 +306,14 @@ function GoFish:UNIT_INVENTORY_CHANGED(unit)
 		self:EnableFishingMode()
 	elseif isFishing and not hasPole then
 		--print("Pole removed!")
+		self:DisableFishingMode()
+	end
+end
+
+------------------------------------------------------------------------
+
+function GoFish:PET_BATTLE_OPENING_START()
+	if isFishing then
 		self:DisableFishingMode()
 	end
 end
