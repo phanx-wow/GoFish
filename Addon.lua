@@ -346,8 +346,14 @@ GameTooltip:HookScript("OnShow", function(self)
 
 	local text = GameTooltipTextLeft1:GetText()
 
-	if not text or not F[text] or IsMounted() or IsInCombat() or UnitInVehicle("player") or UnitIsDeadOrGhost("player")
-	or not allowedForms[GetShapeshiftForm(true) or 0] or farSight[UnitChannelInfo("player") or ""] then
+	if not text or not F[text] 
+	or IsMounted() 
+	or IsInCombat() 
+	or C_PetBattles.IsInBattle() 
+	or UnitInVehicle("player") 
+	or UnitIsDeadOrGhost("player")
+	or not allowedForms[GetShapeshiftForm(true) or 0] 
+	or farSight[UnitChannelInfo("player") or ""] then
 		return
 	end
 

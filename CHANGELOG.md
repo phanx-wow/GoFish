@@ -1,4 +1,8 @@
-### Version 6.2.2.13 (2014 Sep 10)
+### Version 6.2.2.14 (2015 Sep 15)
+
+* Fishing mode will not longer be auto-activated while in a pet battle
+
+### Version 6.2.2.13 (2015 Sep 10)
 
 * Updated for WoW 6.2
 * Added Felmouth Frenzy School
