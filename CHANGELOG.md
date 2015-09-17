@@ -1,3 +1,7 @@
+### Version 6.2.2.15 (2015 Sep 17)
+
+* Fixed a localization error
+
 ### Version 6.2.2.14 (2015 Sep 15)
 
 * Fishing mode will not longer be auto-activated while in a pet battle
