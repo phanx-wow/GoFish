@@ -1,7 +1,7 @@
 --[[--------------------------------------------------------------------
 	GoFish
 	Click-cast fishing and enhanced fishing sounds.
-	Copyright (c) 2013-2015 Phanx <addons@phanx.net>. All rights reserved.
+	Copyright (c) 2013-2016 Phanx <addons@phanx.net>. All rights reserved.
 	http://www.wowinterface.com/downloads/info22270-GoFish.html
 	http://www.curse.com/addons/wow/gofish
 ----------------------------------------------------------------------]]
@@ -15,14 +15,7 @@ local Options = CreateFrame("Frame", "GoFishOptions", InterfaceOptionsFramePanel
 Options.name = GetAddOnMetadata(ADDON, "Title") or ADDON
 InterfaceOptions_AddCategory(Options)
 
-if LibStub and LibStub("LibAboutPanel", true) then
-	Options.About = LibStub("LibAboutPanel").new(Options.name, ADDON)
-end
-
 function ns.ShowOptions()
-	if Options.About then
-		InterfaceOptionsFrame_OpenToCategory(Options.About)
-	end
 	InterfaceOptionsFrame_OpenToCategory(Options)
 end
 
