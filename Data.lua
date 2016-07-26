@@ -1,7 +1,7 @@
 --[[--------------------------------------------------------------------
 	GoFish
 	Click-cast fishing and enhanced fishing sounds.
-	Copyright (c) 2013-2015 Phanx <addons@phanx.net>. All rights reserved.
+	Copyright (c) 2013-2016 Phanx <addons@phanx.net>. All rights reserved.
 	http://www.wowinterface.com/downloads/info22270-GoFish.html
 	http://www.curse.com/addons/wow/gofish
 	https://github.com/Phanx/GoFish
@@ -11,6 +11,12 @@ ns.F = F
 ------------------------------------------------------------------------
 -- English
 ------------------------------------------------------------------------
+F["Black Barracuda School"] = true
+F["Cursed Queenfish School"] = true
+F["Fever of Stormrays"] = true
+F["Highmountain Salmon School"] = true
+F["Mossgill Perch School"] = true
+F["Runescale Koi School"] = true
 F["Abyssal Gulper School"] = true
 F["Albino Cavefish School"] = true
 F["Blackbelly Mudfish School"] = true
@@ -96,6 +102,8 @@ F["Waterlogged Wreckage"] = true
 ------------------------------------------------------------------------
 -- deDE: German
 ------------------------------------------------------------------------
+-- F["Cursed Queenfish School"] = true
+-- F["Fever of Stormrays"] = true
 F["Blut im Wasser"] = true
 F["Blutsegelwrackteile"] = true
 F["Brauverrückter Kaiserlachs"] = true
@@ -121,6 +129,7 @@ F["Ein Schwarm gewanderter Riffkraken"] = true
 F["Ein Schwarm Glasflossenelritzen"] = true
 F["Ein Schwarm glitzernder Juwelendanios"] = true
 F["Ein Schwarm großer Weisenfische"] = true
+F["Ein Schwarm Hochberglachse"] = true
 F["Ein Schwarm Hochlandguppys"] = true
 F["Ein Schwarm imperialer Mantarochen"] = true
 F["Ein Schwarm Jadelungenfische"] = true
@@ -131,17 +140,20 @@ F["Ein Schwarm Krasaranglöffelstöre"] = true
 F["Ein Schwarm Matschflosser"] = true
 F["Ein Schwarm Meeresfische"] = true
 F["Ein Schwarm Mondlichtsepia"] = true
+F["Ein Schwarm Mooskiemenbarsche"] = true
 F["Ein Schwarm mordlustiger Piranhas"] = true
 F["Ein Schwarm Muschelrückengroppen"] = true
 F["Ein Schwarm Nesselfische"] = true
-F["Ein Schwarm ölige Tiefseeschluckaale"] = true
 F["Ein Schwarm öliger Schwarzmaulfische"] = true
 F["Ein Schwarm öliger Seeskorpione"] = true
+F["Ein Schwarm ölige Tiefseeschluckaale"] = true
 F["Ein Schwarm panischer Krasaranglöffelstöre"] = true
 F["Ein Schwarm riesiger Mantisgarnelen"] = true
 F["Ein Schwarm Riffkraken"] = true
 F["Ein Schwarm Rotbauchmandarine"] = true
+F["Ein Schwarm Runenschuppenkoi"] = true
 F["Ein Schwarm Schwarzbauchmatschflosser"] = true
+F["Ein Schwarm schwarzer Barrakudas"] = true
 F["Ein Schwarm Schwarzwasserpeitschflossen"] = true
 F["Ein Schwarm Seeskorpione"] = true
 F["Ein Schwarm Sha-berührter Stachelfische"] = true
@@ -185,6 +197,12 @@ F["Verhedderter Schwarm riesiger Mantisgarnelen"] = true
 -- esES: Spanish
 -- esMX: Latin American Spanish
 ------------------------------------------------------------------------
+-- F["Black Barracuda School"] = true
+-- F["Cursed Queenfish School"] = true
+-- F["Fever of Stormrays"] = true
+-- F["Highmountain Salmon School"] = true
+-- F["Mossgill Perch School"] = true
+-- F["Runescale Koi School"] = true
 F["Agua pura"] = true
 F["Aguanieve de guramis tigre"] = true
 F["Banco de amonites de fuego"] = true
@@ -270,6 +288,12 @@ F["Salmón emperador demenciado por la cerveza"] = true
 ------------------------------------------------------------------------
 -- frFR: French
 ------------------------------------------------------------------------
+-- F["Black Barracuda School"] = true
+-- F["Cursed Queenfish School"] = true
+-- F["Fever of Stormrays"] = true
+-- F["Highmountain Salmon School"] = true
+-- F["Mossgill Perch School"] = true
+-- F["Runescale Koi School"] = true
 F["Amas de crevettes-mantes enchevêtrées"] = true
 F["Banc d’ammonites de feu"] = true
 F["Banc d’esturgeons jaunes aveugles"] = true
@@ -355,7 +379,13 @@ F["Saumon empereur affolé par la bière"] = true
 ------------------------------------------------------------------------
 -- itIT: Italian
 ------------------------------------------------------------------------
--- Strange Pool
+-- F["Black Barracuda School"] = true
+-- F["Cursed Queenfish School"] = true
+-- F["Fever of Stormrays"] = true
+-- F["Highmountain Salmon School"] = true
+-- F["Mossgill Perch School"] = true
+-- F["Runescale Koi School"] = true
+-- F["Strange Pool"] = true
 F["Acqua Pura"] = true
 F["Banco Affollato di Panciarossa Orientali"] = true
 F["Banco di Ammoniti del Fuoco"] = true
@@ -440,6 +470,12 @@ F["Rottami Galleggianti"] = true
 ------------------------------------------------------------------------
 -- ptBR: Brazilian Portugese
 ------------------------------------------------------------------------
+-- F["Black Barracuda School"] = true
+-- F["Cursed Queenfish School"] = true
+-- F["Fever of Stormrays"] = true
+-- F["Highmountain Salmon School"] = true
+-- F["Mossgill Perch School"] = true
+-- F["Runescale Koi School"] = true
 F["Cardume de Boca-grandes Abissais Oleosos"] = true
 F["Cardume de Mandarins Vermelhos"] = true
 F["Restos de Naufrágio"] = true
@@ -524,6 +560,12 @@ F["Salmão Imperial em Frenesi Alcoólico"] = true
 ------------------------------------------------------------------------
 -- ruRU: Russian
 ------------------------------------------------------------------------
+-- F["Black Barracuda School"] = true
+-- F["Cursed Queenfish School"] = true
+-- F["Fever of Stormrays"] = true
+-- F["Highmountain Salmon School"] = true
+-- F["Mossgill Perch School"] = true
+-- F["Runescale Koi School"] = true
 F["Блестящая нефритовая двоякодышащая рыба"] = true
 F["Большая стая запутавшихся раков-богомолов"] = true
 F["Большая стая мигрировавших рифовых осьминогов"] = true
@@ -608,32 +650,38 @@ F["Чистая вода"] = true
 ------------------------------------------------------------------------
 -- koKR: Korean
 ------------------------------------------------------------------------
--- Brew Frenzied Emperor Salmon
--- Crane Yolk Pool
--- Crowded Redbelly Mandarin
--- Felmouth Frenzy School
--- Glowing Jade Lungfish
--- Lagoon Pool
--- Large Pool of Brew Frenzied Emperor Salmon
--- Large Pool of Crowded Redbelly Mandarin
--- Large Pool of Glimmering Jewel Danio
--- Large Pool of Glowing Jade Lungfish
--- Large Pool of Sha-Touched Spinefish
--- Large Pool of Tiger Gourami Slush
--- Large Swarm of Migrated Reef Octopus
--- Large Swarm of Panicked Paddlefish
--- Large Tangled Mantis Shrimp Cluster
--- Mixed Ocean School
--- Oily Abyssal Gulper School
--- Oily Se Scorpion School
--- Pool of Blood
--- Sha-Touched Spinefish
--- Sparkling Pool
--- Strange Pool
--- Swarm of Migrated Reef Octopus
--- Swarm of Panicked Paddlefish
--- Tangled Mantis Shrimp Cluster
--- Tiger Gourami SLush
+-- F["Black Barracuda School"] = true
+-- F["Cursed Queenfish School"] = true
+-- F["Fever of Stormrays"] = true
+-- F["Highmountain Salmon School"] = true
+-- F["Mossgill Perch School"] = true
+-- F["Runescale Koi School"] = true
+-- F["Brew Frenzied Emperor Salmon"] = true
+-- F["Crane Yolk Pool"] = true
+-- F["Crowded Redbelly Mandarin"] = true
+-- F["Felmouth Frenzy School"] = true
+-- F["Glowing Jade Lungfish"] = true
+-- F["Lagoon Pool"] = true
+-- F["Large Pool of Brew Frenzied Emperor Salmon"] = true
+-- F["Large Pool of Crowded Redbelly Mandarin"] = true
+-- F["Large Pool of Glimmering Jewel Danio"] = true
+-- F["Large Pool of Glowing Jade Lungfish"] = true
+-- F["Large Pool of Sha-Touched Spinefish"] = true
+-- F["Large Pool of Tiger Gourami Slush"] = true
+-- F["Large Swarm of Migrated Reef Octopus"] = true
+-- F["Large Swarm of Panicked Paddlefish"] = true
+-- F["Large Tangled Mantis Shrimp Cluster"] = true
+-- F["Mixed Ocean School"] = true
+-- F["Oily Abyssal Gulper School"] = true
+-- F["Oily Se Scorpion School"] = true
+-- F["Pool of Blood"] = true
+-- F["Sha-Touched Spinefish"] = true
+-- F["Sparkling Pool"] = true
+-- F["Strange Pool"] = true
+-- F["Swarm of Migrated Reef Octopus"] = true
+-- F["Swarm of Panicked Paddlefish"] = true
+-- F["Tangled Mantis Shrimp Cluster"] = true
+-- F["Tiger Gourami Slush"] = true
 F["가시고기 떼"] = true
 F["거대 사마귀 새우 떼"] = true
 F["검은물 채찍꼬리 떼"] = true
@@ -691,18 +739,24 @@ F["황제연어 떼"] = true
 ------------------------------------------------------------------------
 -- zhCN: Simplified Chinese
 ------------------------------------------------------------------------
--- Lagoon Pool
--- Large Pool of Brew Frenzied Emperor Salmon
--- Large Pool of Crowded Redbelly Mandarin
--- Large Pool of Tiger Gourami Slush
--- Oily Abyssal Gulper School
--- Oily Sea Scorpion School
--- Pool of Blood
--- Savage Piranha Pool
--- Sea Scorpion School
--- Sparkling Pool
--- Swarm of Migrated Reef Octopus
--- Tiger Gourami Slush
+-- F["Black Barracuda School"] = true
+-- F["Cursed Queenfish School"] = true
+-- F["Fever of Stormrays"] = true
+-- F["Highmountain Salmon School"] = true
+-- F["Mossgill Perch School"] = true
+-- F["Runescale Koi School"] = true
+-- F["Lagoon Pool"] = true
+-- F["Large Pool of Brew Frenzied Emperor Salmon"] = true
+-- F["Large Pool of Crowded Redbelly Mandarin"] = true
+-- F["Large Pool of Tiger Gourami Slush"] = true
+-- F["Oily Abyssal Gulper School"] = true
+-- F["Oily Sea Scorpion School"] = true
+-- F["Pool of Blood"] = true
+-- F["Savage Piranha Pool"] = true
+-- F["Sea Scorpion School"] = true
+-- F["Sparkling Pool"] = true
+-- F["Swarm of Migrated Reef Octopus"] = true
+-- F["Tiger Gourami Slush"] = true
 F["一大群微光珍宝斑马鱼"] = true
 F["一大群恐慌的白鲟鱼"] = true
 F["一大群染煞刺皮鱼"] = true
@@ -775,33 +829,39 @@ F["龙鳞天使鱼群"] = true
 ------------------------------------------------------------------------
 -- zhTW: Traditional Chinese
 ------------------------------------------------------------------------
--- Brackish Mixed School
--- Brew Frenzied Emperor Salmon
--- Crane Yolk Pool
--- Crowded Redbelly Mandarin
--- Felmouth Frenzy School
--- Glimmering Jewel Danio Pool
--- Glowing Jade Lungfish
--- Jawless Skulker School
--- Lagoon Pool
--- Large Pool of Brew Frenzied Emperor Salmon
--- Large Pool of Crowded Redbelly Mandarin
--- Large Pool of Glimering Jewel Danio
--- Large Pool of Glowing Jade Lungfish
--- Large Pool of Sha-Touched Spinefish
--- Large Pool of Tiger Gourami Slush
--- Large Swarm of Migrated Reef Octopus
--- Large Swarm of Panicked Paddlefish
--- Large Tangled Mantis Shrimp Cluster
--- Mixed Ocean School
--- Oily Abyssal Gulper School
--- Oily Sea Scorpion School
--- Pool of Blood
--- Savage Piranha Pool
--- Sha-Touched Spinefish
--- Swarm of Migrated Reef Octopus
--- Swarm of Panicked Paddlefish
--- Tiger Gourami Slush
+-- F["Black Barracuda School"] = true
+-- F["Cursed Queenfish School"] = true
+-- F["Fever of Stormrays"] = true
+-- F["Highmountain Salmon School"] = true
+-- F["Mossgill Perch School"] = true
+-- F["Runescale Koi School"] = true
+-- F["Brackish Mixed School"] = true
+-- F["Brew Frenzied Emperor Salmon"] = true
+-- F["Crane Yolk Pool"] = true
+-- F["Crowded Redbelly Mandarin"] = true
+-- F["Felmouth Frenzy School"] = true
+-- F["Glimmering Jewel Danio Pool"] = true
+-- F["Glowing Jade Lungfish"] = true
+-- F["Jawless Skulker School"] = true
+-- F["Lagoon Pool"] = true
+-- F["Large Pool of Brew Frenzied Emperor Salmon"] = true
+-- F["Large Pool of Crowded Redbelly Mandarin"] = true
+-- F["Large Pool of Glimering Jewel Danio"] = true
+-- F["Large Pool of Glowing Jade Lungfish"] = true
+-- F["Large Pool of Sha-Touched Spinefish"] = true
+-- F["Large Pool of Tiger Gourami Slush"] = true
+-- F["Large Swarm of Migrated Reef Octopus"] = true
+-- F["Large Swarm of Panicked Paddlefish"] = true
+-- F["Large Tangled Mantis Shrimp Cluster"] = true
+-- F["Mixed Ocean School"] = true
+-- F["Oily Abyssal Gulper School"] = true
+-- F["Oily Sea Scorpion School"] = true
+-- F["Pool of Blood"] = true
+-- F["Savage Piranha Pool"] = true
+-- F["Sha-Touched Spinefish"] = true
+-- F["Swarm of Migrated Reef Octopus"] = true
+-- F["Swarm of Panicked Paddlefish"] = true
+-- F["Tiger Gourami Slush"] = true
 F["冰川鮭魚群"] = true
 F["北風水母群"] = true
 F["喀撒朗匙吻鱘魚群"] = true
