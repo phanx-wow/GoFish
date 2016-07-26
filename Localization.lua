@@ -1,7 +1,7 @@
 --[[--------------------------------------------------------------------
 	GoFish
 	Click-cast fishing and enhanced fishing sounds.
-	Copyright (c) 2013-2015 Phanx <addons@phanx.net>. All rights reserved.
+	Copyright (c) 2013-2016 Phanx <addons@phanx.net>. All rights reserved.
 	http://www.wowinterface.com/downloads/info22270-GoFish.html
 	http://www.curse.com/addons/wow/gofish
 	https://github.com/Phanx/GoFish
@@ -128,6 +128,20 @@ return end
 ------------------------------------------------------------------------
 
 if CURRENT_LOCALE == "koKR" then
+
+L["Activate when equipping a fishing pole"] = "낚싯대를 착용하면 활성화 합니다."
+L["Activate when mousing over a fish pool"] = "마우스를 낚싯대에 가져가면 활성화 합니다."
+L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "낚시중일 때 환경 소리를 조절합니다. 최적화는 감소시키는 겁니다."
+L["Adjusts the master volume while fishing."] = "낚시중일 때 주 음량을 조절합니다."
+L["Adjusts the music volume while fishing. For best results, turn it down."] = "낚시중일 때 배경음악을 조절합니다. 최적화는 감소시키는 겁니다."
+L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "낚시중일 때 효과음을 조절합니다. 최적화는 증가시키는 겁니다."
+L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "낚싯대에 마우스를 가져가면 자동으로 낚시 모드로 전환합니다. 낚시모드에서는 10초 동안 낚시를 하지 않으면 꺼집니다."
+L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "낚싯대를 착용하는 동안 낚시모드로 전환합니다."
+L["Enhance sound effects while fishing"] = "낚시를 하는 동안 효과소리를 증가시킵니다."
+L["Quick fishing {OFF}"] = "빠른 낚시 {끔}"
+L["Quick fishing {ON}"] = "빠른 낚시 {켬}"
+L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "낚시에서 건져올리는 소리를 잘 듣기 위해 효과는 증가시키고, 음악 및 환경 소리는 감소시킵니다. 낚시 후에는 본래값으로 복귀됩니다."
+L["Toggle quick fishing"] = "빠른 낚시 전환"
 
 return end
 
