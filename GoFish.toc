@@ -1,4 +1,4 @@
-## Interface: 60200
+## Interface: 70000
 ## Version: @project-version@
 
 ## Title: GoFish
@@ -9,8 +9,10 @@
 
 ## Author: Phanx
 ## X-Email: addons@phanx.net
-## X-Copyright: Copyright (c) 2013-2015 Phanx. All rights reserved.
+## X-Copyright: Copyright (c) 2013-2016 Phanx. All rights reserved.
 ## X-Website: https://github.com/Phanx/GoFish
+## X-Curse-Project-ID: gofish
+## X-WoWI-ID: 22270
 
 ## SavedVariables: GoFishDB
 

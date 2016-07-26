@@ -1,3 +1,8 @@
+### Version 7.0.3.0 (2016 Jul 26)
+
+* Updated for WoW 7.0
+* Add Korean translations by next96
+
 ### Version 6.2.2.15 (2015 Sep 17)
 
 * Fixed a localization error
