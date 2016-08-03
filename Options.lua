@@ -3,7 +3,7 @@
 	Click-cast fishing and enhanced fishing sounds.
 	Copyright (c) 2013-2016 Phanx <addons@phanx.net>. All rights reserved.
 	http://www.wowinterface.com/downloads/info22270-GoFish.html
-	http://www.curse.com/addons/wow/gofish
+	https://mods.curse.com/addons/wow/gofish
 ----------------------------------------------------------------------]]
 -- Double-click time 0.2 - 0.6 x 0.05
 -- Mouseover timeout 5 - 60 x 5
