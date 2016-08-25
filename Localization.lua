@@ -50,17 +50,17 @@ return end
 if CURRENT_LOCALE == "esES" then
 
 L["Activate when equipping a fishing pole"] = "Activa al equipar una caña de pescar"
-L["Activate when mousing over a fish pool"] = "Activa al pasar el ratón sobre banco"
-L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "Ajusta el volumen del sonido ambiental mientras que estás pescando. Para mejores resultados, bajalo."
-L["Adjusts the master volume while fishing."] = "Ajusta el volumen general del sonido mientras que estás pescando."
-L["Adjusts the music volume while fishing. For best results, turn it down."] = "Ajusta el volumen de la música mientras que estás pescando. Para mejores resultados, bajalo."
-L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "Ajusta el volumen de los efectos de sonido mientras que estás pescando. Para mejores resultados, subalo."
-L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "Activar automáticamente el modo de pesca al pasar el ratón sobre un banco de peces. Cuando se activa este manera, el modo de pesca se desactiva si no pescas durante 10 segundos."
-L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "Activar automáticamente el modo de pesca mientras que tienes equipada una caña de pescar."
-L["Enhance sound effects while fishing"] = "Mejora los efectos de sonido"
-L["Quick fishing {OFF}"] = "Pesca rápida {activó}"
-L["Quick fishing {ON}"] = "Pesca rápida {desactivó}"
-L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Para escuchar mejor el sonido del cebo, suba los efectos de sonido, y baja la música y el sonido ambiental. Los niveles originales de sonido se restauran después de la pesca."
+L["Activate when mousing over a fish pool"] = "Activar al pasar el ratón sobre un banco de peces"
+L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "Ajusta el volumen del sonido ambiental mientras pescas. Para unos mejores resultados, bájalo."
+L["Adjusts the master volume while fishing."] = "Ajusta el volumen general del sonido mientras pescas."
+L["Adjusts the music volume while fishing. For best results, turn it down."] = "Ajusta el volumen de la música mientras pescas. Para unos mejores resultados, bájalo."
+L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "Ajusta el volumen de los efectos de sonido mientras pescas. Para unos mejores resultados, súbelo."
+L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "Activar automáticamente el modo de pesca al pasar el ratón sobre un banco de peces. Cuando se activa de esta manera, el modo de pesca se desactiva si no pescas en 10 segundos."
+L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "Activar automáticamente el modo de pesca mientras tienes equipada una caña de pescar."
+L["Enhance sound effects while fishing"] = "Mejorar los efectos de sonido mientras pescas"
+L["Quick fishing {OFF}"] = "Pesca rápida {DESACTIVADA}"
+L["Quick fishing {ON}"] = "Pesca rápida {ACTIVADA}"
+L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Para escuchar mejor el sonido del corcho, sube el volumen de los efectos de sonido y baja el volumen de la música y el sonido ambiental. Los niveles originales de sonido se restaurarán después de pescar."
 L["Toggle quick fishing"] = "Activar/desactivar pesca rápida"
 
 return end
@@ -72,17 +72,17 @@ return end
 if CURRENT_LOCALE == "esMX" then
 
 L["Activate when equipping a fishing pole"] = "Activa al equipar una caña de pescar"
-L["Activate when mousing over a fish pool"] = "Activa al pasar el ratón sobre banco"
-L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "Ajusta el volumen del sonido ambiental mientras que estás pescando. Para mejores resultados, bajalo."
-L["Adjusts the master volume while fishing."] = "Ajusta el volumen general del sonido mientras que estás pescando."
-L["Adjusts the music volume while fishing. For best results, turn it down."] = "Ajusta el volumen de la música mientras que estás pescando. Para mejores resultados, bajalo."
-L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "Ajusta el volumen de los efectos de sonido mientras que estás pescando. Para mejores resultados, subalo."
-L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "Activar automáticamente el modo de pesca al pasar el ratón sobre un banco de peces. Cuando se activa este manera, el modo de pesca se desactiva si no pescas durante 10 segundos."
-L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "Activar automáticamente el modo de pesca mientras que tienes equipada una caña de pescar."
-L["Enhance sound effects while fishing"] = "Mejora los efectos de sonido"
-L["Quick fishing {OFF}"] = "Pesca rápida {activó}"
-L["Quick fishing {ON}"] = "Pesca rápida {desactivó}"
-L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Para escuchar mejor el sonido del cebo, suba los efectos de sonido, y baja la música y el sonido ambiental. Los niveles originales de sonido se restauran después de la pesca."
+L["Activate when mousing over a fish pool"] = "Activar al pasar el ratón sobre un banco de peces"
+L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "Ajusta el volumen del sonido ambiental mientras pescas. Para unos mejores resultados, bájalo."
+L["Adjusts the master volume while fishing."] = "Ajusta el volumen general del sonido mientras pescas."
+L["Adjusts the music volume while fishing. For best results, turn it down."] = "Ajusta el volumen de la música mientras pescas. Para unos mejores resultados, bájalo."
+L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "Ajusta el volumen de los efectos de sonido mientras pescas. Para unos mejores resultados, súbelo."
+L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "Activar automáticamente el modo de pesca al pasar el ratón sobre un banco de peces. Cuando se activa de esta manera, el modo de pesca se desactiva si no pescas en 10 segundos."
+L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "Activar automáticamente el modo de pesca mientras tienes equipada una caña de pescar."
+L["Enhance sound effects while fishing"] = "Mejorar los efectos de sonido mientras pescas"
+L["Quick fishing {OFF}"] = "Pesca rápida {DESACTIVADA}"
+L["Quick fishing {ON}"] = "Pesca rápida {ACTIVADA}"
+L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Para escuchar mejor el sonido del corcho, sube el volumen de los efectos de sonido y baja el volumen de la música y el sonido ambiental. Los niveles originales de sonido se restaurarán después de pescar."
 L["Toggle quick fishing"] = "Activar/desactivar pesca rápida"
 
 return end
@@ -109,8 +109,8 @@ return end
 
 if CURRENT_LOCALE == "ptBR" then
 
-L["Quick fishing {OFF}"] = "Pesca rápida {ativou}"
-L["Quick fishing {ON}"] = "Pesca rápida {desativou}"
+L["Quick fishing {OFF}"] = "Pesca rápida {DESATIVOU}"
+L["Quick fishing {ON}"] = "Pesca rápida {ATIVOU}"
 L["Toggle quick fishing"] = "Ativar/desativar pesca rápida"
 
 return end
