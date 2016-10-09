@@ -58,8 +58,18 @@ Options:SetScript("OnShow", function()
 		end
 	end)
 
+	local ActivateAutoloot = CreateFrame("CheckButton", "$parentActivateAutoloot", Options, "InterfaceOptionsCheckButtonTemplate")
+	ActivateAutoloot:SetPoint("TOPLEFT", ActivateOnEquip, "BOTTOMLEFT", 0, -12)
+	ActivateAutoloot.Text:SetText(L["Activate autoloot"])
+	ActivateAutoloot.tooltipText = L["Activate or deactivate autoloot when on fishing mode. Usefull if you already have a autoloot addon."]
+	ActivateAutoloot:SetScript("OnClick", function(this)
+		local checked = not not this:GetChecked()
+		GoFishDB.ActivateAutoloot = checked
+		ReloadUI()
+	end)
+
 	local EnhanceSounds = CreateFrame("CheckButton", "$parentEnhanceSounds", Options, "InterfaceOptionsCheckButtonTemplate")
-	EnhanceSounds:SetPoint("TOPLEFT", ActivateOnEquip, "BOTTOMLEFT", 0, -12)
+	EnhanceSounds:SetPoint("TOPLEFT", ActivateAutoloot, "BOTTOMLEFT", 0, -12)
 	EnhanceSounds.Text:SetText(L["Enhance sound effects while fishing"])
 	EnhanceSounds.tooltipText = L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."]
 	EnhanceSounds:SetScript("OnClick", function(this)
@@ -155,6 +165,7 @@ Options:SetScript("OnShow", function()
 	function Options:refresh()
 		ActivateOnMouseover:SetChecked(GoFishDB.ActivateOnMouseover)
 		ActivateOnEquip:SetChecked(GoFishDB.ActivateOnEquip)
+		ActivateAutoloot:SetChecked(GoFishDB.ActivateAutoloot)
 
 		EnhanceSounds:SetChecked(GoFishDB.EnhanceSounds)
 		MasterVolume:SetEnabled(GoFishDB.EnhanceSounds)

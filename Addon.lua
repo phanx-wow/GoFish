@@ -40,6 +40,7 @@ local defaults = {
 	EnhanceSounds = true,
 	ActivateOnEquip = true,
 	ActivateOnMouseover = true,
+	ActivateAutoloot = true,
 	MouseoverTimeout = 10,
 	CVars = {
 		Sound_EnableAllSound = 1,
@@ -168,8 +169,11 @@ function GoFish:EnableFishingMode()
 	autoInteract = GetCVar("autointeract")
 	SetCVar("autointeract", 0)
 
-	autoLoot = GetCVar("autoLootDefault")
-	SetCVar("autoLootDefault", 1)
+	if GoFishDB.ActivateAutoloot then
+		--print("Autoloot is enabled");
+		autoLoot = GetCVar("autoLootDefault")
+		SetCVar("autoLootDefault", 1)
+	end
 
 	isFishing = true
 	print("|cff00ddbaGoFish:|r", L["Quick fishing {ON}"])
@@ -183,8 +187,10 @@ function GoFish:DisableFishingMode()
 	SetCVar("autointeract", autoInteract)
 	autoInteract = nil
 
-	SetCVar("autoLootDefault", autoLoot)
-	autoLoot = nil
+	if GoFishDB.ActivateAutoloot then
+		SetCVar("autoLootDefault", autoLoot)
+		autoLoot = nil
+	end
 
 	autoStopTime = nil
 	print("|cff00ddbaGoFish:|r", L["Quick fishing {OFF}"])
