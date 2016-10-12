@@ -65,7 +65,6 @@ Options:SetScript("OnShow", function()
 	ActivateAutoloot:SetScript("OnClick", function(this)
 		local checked = not not this:GetChecked()
 		GoFishDB.ActivateAutoloot = checked
-		ReloadUI()
 	end)
 
 	local EnhanceSounds = CreateFrame("CheckButton", "$parentEnhanceSounds", Options, "InterfaceOptionsCheckButtonTemplate")
