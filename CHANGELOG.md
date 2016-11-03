@@ -1,7 +1,14 @@
+### Version 7.1.0.0 (2016 Nov 03)
+
+* Updated for WoW 7.1
+* Added an option to disable changing auto-loot settings while fishing
+* Added more Legion fish pools 
+
 ### Version 7.0.3.0 (2016 Jul 26)
 
 * Updated for WoW 7.0
-* Add Korean translations by next96
+* Added Legion fish pools
+* Added Korean translations by next96
 
 ### Version 6.2.2.15 (2015 Sep 17)
 

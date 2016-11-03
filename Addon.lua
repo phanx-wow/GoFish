@@ -2,21 +2,31 @@
 	GoFish
 	Click-cast fishing and enhanced fishing sounds.
 	Copyright (c) 2013-2016 Phanx <addons@phanx.net>. All rights reserved.
-	http://www.wowinterface.com/downloads/info22270-GoFish.html
+	http://github.com/Phanx/GoFish
 	https://mods.curse.com/addons/wow/gofish
+	https://www.wowinterface.com/downloads/info22270-GoFish.html
 ----------------------------------------------------------------------]]
 
 local ADDON, ns = ...
 local FISHING = GetSpellInfo(131474)
 local FISHING_POLE = select(7, GetItemInfo(6256))
-local F = ns.F -- fish pool names
-local L = ns.L -- localized strings for display
 
+local L = ns.L
 L["Quick fishing {OFF}"] = L["Quick fishing {OFF}"]:gsub("{",  GRAY_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
 L["Quick fishing {ON}"]  = L["Quick fishing {ON}" ]:gsub("{", GREEN_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
 
 BINDING_HEADER_GOFISH = GetAddOnMetadata(ADDON, "Title") or ADDON
 BINDING_NAME_GOFISH_TOGGLE = L["Toggle quick fishing"]
+
+local F = {}
+for k, v in pairs(ns.F) do
+	if v == true then
+		F[k] = true
+	else
+		F[v] = true
+	end
+end
+ns.F = F
 
 ------------------------------------------------------------------------
 
