@@ -2,7 +2,7 @@
 
 * Updated for WoW 7.1
 * Added an option to disable changing auto-loot settings while fishing
-* Added more Legion fish pools 
+* Added more Legion fish pools
 
 ### Version 7.0.3.0 (2016 Jul 26)
 
@@ -16,7 +16,7 @@
 
 ### Version 6.2.2.14 (2015 Sep 15)
 
-* Fishing mode will not longer be auto-activated while in a pet battle
+* Fishing mode will no longer be auto-activated while in a pet battle
 
 ### Version 6.2.2.13 (2015 Sep 10)
 

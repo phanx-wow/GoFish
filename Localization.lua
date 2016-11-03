@@ -2,9 +2,9 @@
 	GoFish
 	Click-cast fishing and enhanced fishing sounds.
 	Copyright (c) 2013-2016 Phanx <addons@phanx.net>. All rights reserved.
-	http://www.wowinterface.com/downloads/info22270-GoFish.html
+	https://github.com/phanx-wow/GoFish
 	https://mods.curse.com/addons/wow/gofish
-	https://github.com/Phanx/GoFish
+	https://www.wowinterface.com/downloads/info22270-GoFish.html
 ----------------------------------------------------------------------]]
 
 local L, _, ns = {}, ...
@@ -35,11 +35,13 @@ L["Adjusts the music volume while fishing. For best results, turn it down."] = "
 L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "Passt die Effektlautstärke beim Angeln an. Für beste Ergebnisse, mach sie lauter."
 L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "Automatisch Schnellangeln aktivieren wenn du einen Schwarm hoverst. Solltest du nicht innerhalb 10 Sekunden angeln, deaktiviert der Modus automatisch."
 L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "Automatisch Schnellangeln aktivieren wenn du eine Angel trägst."
+L["Enable auto-loot while fishing"] = "Schnell-Plündern aktivieren wenn du angelst"
 L["Enhance sound effects while fishing"] = "Soundeffekte verstärken wenn du angelst"
 L["Quick fishing {OFF}"] = "Schnellangeln {AUS}"
 L["Quick fishing {ON}"] = "Schnellangeln {AN}"
 L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Um den Köder besser zu hören, erhöht die Lautstärke und reduziert Musik und Umgebungsgeräusche. Deine normalen Einstellungen werden nach dem Angeln wiederhergestellt."
 L["Toggle quick fishing"] = "Schnellangeln umschalten"
+L["Your previous auto-loot setting is restored when you leave fishing mode."] = "Deine normale Einstellung werden nach dem Angeln wiederhergestellt."
 
 return end
 
@@ -57,11 +59,13 @@ L["Adjusts the music volume while fishing. For best results, turn it down."] = "
 L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "Ajusta el volumen de los efectos de sonido mientras pescas. Para unos mejores resultados, súbelo."
 L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "Activar automáticamente el modo de pesca al pasar el ratón sobre un banco de peces. Cuando se activa de esta manera, el modo de pesca se desactiva si no pescas en 10 segundos."
 L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "Activar automáticamente el modo de pesca mientras tienes equipada una caña de pescar."
+L["Enable auto-loot while fishing"] = "Activar \"Despojar automáticamente\" mientras pescas"
 L["Enhance sound effects while fishing"] = "Mejorar los efectos de sonido mientras pescas"
 L["Quick fishing {OFF}"] = "Pesca rápida {DESACTIVADA}"
 L["Quick fishing {ON}"] = "Pesca rápida {ACTIVADA}"
 L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Para escuchar mejor el sonido del corcho, sube el volumen de los efectos de sonido y baja el volumen de la música y el sonido ambiental. Los niveles originales de sonido se restaurarán después de pescar."
 L["Toggle quick fishing"] = "Activar/desactivar pesca rápida"
+L["Your previous auto-loot setting is restored when you leave fishing mode."] = "El ajuste anterior se restaurará después de pescar."
 
 return end
 
@@ -79,11 +83,13 @@ L["Adjusts the music volume while fishing. For best results, turn it down."] = "
 L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "Ajusta el volumen de los efectos de sonido mientras pescas. Para unos mejores resultados, súbelo."
 L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "Activar automáticamente el modo de pesca al pasar el ratón sobre un banco de peces. Cuando se activa de esta manera, el modo de pesca se desactiva si no pescas en 10 segundos."
 L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "Activar automáticamente el modo de pesca mientras tienes equipada una caña de pescar."
+L["Enable auto-loot while fishing"] = "Activar \"Despojar automáticamente\" mientras pescas"
 L["Enhance sound effects while fishing"] = "Mejorar los efectos de sonido mientras pescas"
 L["Quick fishing {OFF}"] = "Pesca rápida {DESACTIVADA}"
 L["Quick fishing {ON}"] = "Pesca rápida {ACTIVADA}"
 L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Para escuchar mejor el sonido del corcho, sube el volumen de los efectos de sonido y baja el volumen de la música y el sonido ambiental. Los niveles originales de sonido se restaurarán después de pescar."
 L["Toggle quick fishing"] = "Activar/desactivar pesca rápida"
+L["Your previous auto-loot setting is restored when you leave fishing mode."] = "El ajuste anterior se restaurará después de pescar."
 
 return end
 

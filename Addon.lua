@@ -2,7 +2,7 @@
 	GoFish
 	Click-cast fishing and enhanced fishing sounds.
 	Copyright (c) 2013-2016 Phanx <addons@phanx.net>. All rights reserved.
-	http://github.com/Phanx/GoFish
+	https://github.com/phanx-wow/GoFish
 	https://mods.curse.com/addons/wow/gofish
 	https://www.wowinterface.com/downloads/info22270-GoFish.html
 ----------------------------------------------------------------------]]
@@ -47,9 +47,10 @@ local extraCVars = { -- extra things to disable in fishing mode if sound was glo
 }
 
 local defaults = {
-	EnhanceSounds = true,
 	ActivateOnEquip = true,
 	ActivateOnMouseover = true,
+	AutoLoot = true,
+	EnhanceSounds = true,
 	MouseoverTimeout = 10,
 	CVars = {
 		Sound_EnableAllSound = 1,
@@ -176,10 +177,12 @@ function GoFish:EnableFishingMode()
 	end
 
 	autoInteract = GetCVar("autointeract")
-	SetCVar("autointeract", 0)
+	SetCVar("autointeract", "0")
 
-	autoLoot = GetCVar("autoLootDefault")
-	SetCVar("autoLootDefault", 1)
+	if GoFishDB.AutoLoot then
+		autoLoot = GetCVar("autoLootDefault")
+		SetCVar("autoLootDefault", "1")
+	end
 
 	isFishing = true
 	print("|cff00ddbaGoFish:|r", L["Quick fishing {ON}"])
@@ -193,8 +196,10 @@ function GoFish:DisableFishingMode()
 	SetCVar("autointeract", autoInteract)
 	autoInteract = nil
 
-	SetCVar("autoLootDefault", autoLoot)
-	autoLoot = nil
+	if GoFishDB.AutoLoot and autoLoot then
+		SetCVar("autoLootDefault", autoLoot)
+		autoLoot = nil
+	end
 
 	autoStopTime = nil
 	print("|cff00ddbaGoFish:|r", L["Quick fishing {OFF}"])
