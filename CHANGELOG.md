@@ -1,3 +1,7 @@
+### Version 7.1.0.1 (2016 Nov 03)
+
+* Added French translations by arnolanf
+
 ### Version 7.1.0.0 (2016 Nov 03)
 
 * Updated for WoW 7.1

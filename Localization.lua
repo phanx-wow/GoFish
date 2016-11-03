@@ -99,6 +99,22 @@ return end
 
 if CURRENT_LOCALE == "frFR" then
 
+L["Activate when equipping a fishing pole"] = "Activer quand équipé d'une canne à pêche"
+L["Activate when mousing over a fish pool"] = "Activer quand vous survolez un banc de poissons avec la souris."
+L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "Ajuste le volume des sons d'ambiance pendant la pêche. Pour un meilleur résultat, réglez ceci assez bas."
+L["Adjusts the master volume while fishing."] = "Ajuster le volume sonore principal pendant la pêche."
+L["Adjusts the music volume while fishing. For best results, turn it down."] = "Ajuste le volume sonore principal pendant la pêche. Pour un meilleur résultat, réglez ceci assez bas."
+L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "Ajuste les effets sonores pendant la pêche. Pour un meilleur résultat, réglez ceci assez haut."
+L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "Active automatiquement le mode pêche quand vous survolez un banc de poisson avec la souris. Quand activé de cette façon, le mode pêche est désactivé après 10 secondes sans utilisation."
+L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "Active automatiquement le mode pêche quand vous avez une canne à pêche équipée."
+L["Enable auto-loot while fishing"] = "Activer le butin automatique pendant la pêche"
+L["Enhance sound effects while fishing"] = "Augmenter les effets sonores pendant la pêche"
+L["Quick fishing {OFF}"] = "Pêche rapide {désactivée}"
+L["Quick fishing {ON}"] = "Pêche rapide {activée}"
+L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Afin de mieux entendre le son du bouchon de pêche, montez le volume des effets sonores et baissez le volume de la musique et des sons d'ambiance. Les niveaux sonores normaux sont restaurés après la pêche."
+L["Toggle quick fishing"] = "Activer/désactiver la pêche rapide"
+L["Your previous auto-loot setting is restored when you leave fishing mode."] = "Votre précédente préférence de butin automatique est restaurée quand vous quittez le mode pêche"
+
 return end
 
 ------------------------------------------------------------------------
