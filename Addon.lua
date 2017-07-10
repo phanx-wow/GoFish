@@ -10,6 +10,8 @@
 local ADDON, ns = ...
 local FISHING = GetSpellInfo(131474)
 local FISHING_POLE = select(7, GetItemInfo(6256))
+local FROSTWOLF_WAR_WOLF = GetSpellInfo(164222)
+local TELAARI_TALBUK = GetSpellInfo(165803)
 
 local L = ns.L
 L["Quick fishing {OFF}"] = L["Quick fishing {OFF}"]:gsub("{",  GRAY_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
@@ -370,13 +372,13 @@ GameTooltip:HookScript("OnShow", function(self)
 
 	local text = GameTooltipTextLeft1:GetText()
 
-	if not text or not F[text] 
-	or IsMounted() 
-	or IsInCombat() 
-	or C_PetBattles.IsInBattle() 
-	or UnitInVehicle("player") 
+	if not text or not F[text]
+	or (IsMounted() and not (UnitBuff("player", FROSTWOLF_WAR_WOLF) or UnitBuff("player", TELAARI_TALBUK)))
+	or IsInCombat()
+	or C_PetBattles.IsInBattle()
+	or UnitInVehicle("player")
 	or UnitIsDeadOrGhost("player")
-	or not allowedForms[GetShapeshiftForm(true) or 0] 
+	or not allowedForms[GetShapeshiftForm(true) or 0]
 	or farSight[UnitChannelInfo("player") or ""] then
 		return
 	end
