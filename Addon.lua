@@ -378,7 +378,7 @@ GameTooltip:HookScript("OnShow", function(self)
 	or C_PetBattles.IsInBattle()
 	or UnitInVehicle("player")
 	or UnitIsDeadOrGhost("player")
-	or not allowedForms[GetShapeshiftForm(true) or 0]
+	or not allowedForms[GetShapeshiftFormID() or 0]
 	or farSight[UnitChannelInfo("player") or ""] then
 		return
 	end
