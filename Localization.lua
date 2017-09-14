@@ -111,7 +111,7 @@ L["Enable auto-loot while fishing"] = "Activer le butin automatique pendant la p
 L["Enhance sound effects while fishing"] = "Augmenter les effets sonores pendant la pêche"
 L["Quick fishing {OFF}"] = "Pêche rapide {désactivée}"
 L["Quick fishing {ON}"] = "Pêche rapide {activée}"
-L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Afin de mieux entendre le son du bouchon de pêche, montez le volume des effets sonores et baissez le volume de la musique et des sons d'ambiance. Les niveaux sonores normaux sont restaurés après la pêche."
+L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Afin de mieux entendre le son du bouchon de pêche, monte le volume des effets sonores et baisse le volume de la musique et des sons d'ambiance. Les niveaux sonores normaux sont restaurés après la pêche."
 L["Toggle quick fishing"] = "Activer/désactiver la pêche rapide"
 L["Your previous auto-loot setting is restored when you leave fishing mode."] = "Votre précédente préférence de butin automatique est restaurée quand vous quittez le mode pêche"
 
@@ -151,19 +151,21 @@ return end
 
 if CURRENT_LOCALE == "koKR" then
 
-L["Activate when equipping a fishing pole"] = "낚싯대를 착용하면 활성화 합니다."
-L["Activate when mousing over a fish pool"] = "마우스를 낚싯대에 가져가면 활성화 합니다."
-L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "낚시중일 때 환경 소리를 조절합니다. 최적화는 감소시키는 겁니다."
-L["Adjusts the master volume while fishing."] = "낚시중일 때 주 음량을 조절합니다."
-L["Adjusts the music volume while fishing. For best results, turn it down."] = "낚시중일 때 배경음악을 조절합니다. 최적화는 감소시키는 겁니다."
-L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "낚시중일 때 효과음을 조절합니다. 최적화는 증가시키는 겁니다."
-L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "낚싯대에 마우스를 가져가면 자동으로 낚시 모드로 전환합니다. 낚시모드에서는 10초 동안 낚시를 하지 않으면 꺼집니다."
-L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "낚싯대를 착용하는 동안 낚시모드로 전환합니다."
-L["Enhance sound effects while fishing"] = "낚시를 하는 동안 효과소리를 증가시킵니다."
+L["Activate when equipping a fishing pole"] = "낚싯대를 착용 중일 때 활성화합니다"
+L["Activate when mousing over a fish pool"] = "물고기 떼에 마우스를 올렸을 때 활성화합니다"
+L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "낚시 중일 때 환경 소리 음량을 조절합니다. 최상의 결과를 위해서 환경 소리를 끄세요."
+L["Adjusts the master volume while fishing."] = "낚시 중일 때 주 음량을 조절합니다."
+L["Adjusts the music volume while fishing. For best results, turn it down."] = "낚시 중일 때 배경음악 음량을 조절합니다. 최상의 결과를 위해서 배경음악을 끄세요."
+L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "낚시 중일 때 효과음 음량을 조절합니다. 최상의 결과를 위해서 효과음 소리를 켜세요."
+L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "물고기 떼에 마우스를 올리면 자동으로 낚시 모드를 켭니다. 이 방법으로 활성화되었을 때 10초 동안 낚시를 하지 않으면 낚시 모드가 비활성됩니다."
+L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "낚싯대를 착용 중일 때 자동으로 낚시 모드를 켭니다."
+L["Enable auto-loot while fishing"] = "낚시 중일 때 자동 전리품 획득 사용"
+L["Enhance sound effects while fishing"] = "낚시 중에 효과음 소리 개선"
 L["Quick fishing {OFF}"] = "빠른 낚시 {끔}"
 L["Quick fishing {ON}"] = "빠른 낚시 {켬}"
-L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "낚시에서 건져올리는 소리를 잘 듣기 위해 효과는 증가시키고, 음악 및 환경 소리는 감소시킵니다. 낚시 후에는 본래값으로 복귀됩니다."
+L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "낚시찌 소리를 잘 듣기 위해 효과음은 올리고, 배경음악과 환경 소리는 줄입니다. 원래의 소리 설정은 낚시 후에 복원됩니다."
 L["Toggle quick fishing"] = "빠른 낚시 전환"
+L["Your previous auto-loot setting is restored when you leave fishing mode."] = "낚시 모드가 꺼지면 이전의 자동 전리품 획득 설정이 복원됩니다."
 
 return end
 
