@@ -1,3 +1,11 @@
+### Version 7.3.0.0 (2017 Sep 14)
+
+* Updated for WoW 7.3
+* Added an option to enable sound in background while fishing
+* Fixed mouseover activation for druids in Moonkin Form and rogues in Stealth
+* Updated French translations by arnolanf
+* Updated Korean translations by yuk6196
+
 ### Version 7.1.0.1 (2016 Nov 03)
 
 * Added French translations by arnolanf
