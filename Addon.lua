@@ -1,7 +1,8 @@
 --[[--------------------------------------------------------------------
 	GoFish
 	Click-cast fishing and enhanced fishing sounds.
-	Copyright (c) 2013-2016 Phanx <addons@phanx.net>. All rights reserved.
+	Copyright (c) 2013-2017 Phanx <addons@phanx.net>. All rights reserved.
+    Maintained by Akkorian <armordecai@protonmail.com>
 	https://github.com/phanx-wow/GoFish
 	https://mods.curse.com/addons/wow/gofish
 	https://www.wowinterface.com/downloads/info22270-GoFish.html
@@ -34,6 +35,7 @@ ns.F = F
 
 local autoInteract -- was autoInteract ON before we started fishing mode?
 local autoLoot     -- was autoLootDefault OFF before we started fishing mode?
+local soundInBg    -- was autoLootDefault OFF before we started fishing mode?
 local autoStopTime -- GetTime() to turn off auto-enabled fishing mode
 local clearBinding -- was combat started mid-click, leaving us stuck in fishing mode?
 local isFishing    -- is fishing mode on?
@@ -54,6 +56,7 @@ local defaults = {
 	AutoLoot = true,
 	EnhanceSounds = true,
 	MouseoverTimeout = 10,
+	SoundInBG = true,
 	CVars = {
 		Sound_EnableAllSound = 1,
 		Sound_EnableSFX = 1,
@@ -82,6 +85,11 @@ local function IsFishingPoleEquipped()
 end
 
 local function EnhanceSounds()
+	if GoFishDB.SoundInBG then
+		soundInBg = GetCVar("Sound_EnableSoundWhenGameIsInBG")
+		SetCVar("Sound_EnableSoundWhenGameIsInBG", "1")
+	end
+
 	if not GoFishDB.EnhanceSounds or next(normalCVars) then
 		return
 	end
@@ -98,6 +106,11 @@ local function EnhanceSounds()
 end
 
 local function RestoreSounds()
+	if soundInBg and GoFishDB.SoundInBG then
+		SetCVar("Sound_EnableSoundWhenGameIsInBG", soundInBg)
+		soundInBg = nil
+	end
+
 	if not GoFishDB.EnhanceSounds or not next(normalCVars) then
 		return
 	end

@@ -1,7 +1,8 @@
 --[[--------------------------------------------------------------------
 	GoFish
 	Click-cast fishing and enhanced fishing sounds.
-	Copyright (c) 2013-2016 Phanx <addons@phanx.net>. All rights reserved.
+	Copyright (c) 2013-2017 Phanx <addons@phanx.net>. All rights reserved.
+    Maintained by Akkorian <armordecai@protonmail.com>
 	https://github.com/phanx-wow/GoFish
 	https://mods.curse.com/addons/wow/gofish
 	https://www.wowinterface.com/downloads/info22270-GoFish.html
@@ -11,6 +12,9 @@
 
 local ADDON, ns = ...
 local L = ns.L
+
+local SOUND_OFF = SOUNDKIT.IG_MAIN_MENU_OPTION_CHECK_BOX_OFF
+local SOUND_ON = SOUNDKIT.IG_MAIN_MENU_OPTION_CHECK_BOX_ON
 
 local Options = CreateFrame("Frame", "GoFishOptions", InterfaceOptionsFramePanelContainer)
 Options.name = GetAddOnMetadata(ADDON, "Title") or ADDON
@@ -40,7 +44,7 @@ Options:SetScript("OnShow", function(self)
 	ActivateOnMouseover.tooltipText = L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."]
 	ActivateOnMouseover:SetScript("OnClick", function(this)
 		local checked = not not this:GetChecked()
-		PlaySound(checked and "igMainMenuOptionCheckBoxOn" or "igMainmenuOptionCheckBoxOff")
+		PlaySound(checked and SOUND_ON or SOUND_OFF)
 		GoFishDB.ActivateOnMouseover = checked
 	end)
 
@@ -50,7 +54,7 @@ Options:SetScript("OnShow", function(self)
 	ActivateOnEquip.tooltipText = L["Automatically turn on fishing mode while you have a fishing pole equipped."]
 	ActivateOnEquip:SetScript("OnClick", function(this)
 		local checked = not not this:GetChecked()
-		PlaySound(checked and "igMainMenuOptionCheckBoxOn" or "igMainmenuOptionCheckBoxOff")
+		PlaySound(checked and SOUND_ON or SOUND_OFF)
 		GoFishDB.ActivateOnEquip = checked
 		if checked then
 			GoFish:RegisterUnitEvent("UNIT_INVENTORY_CHANGED", "player")
@@ -62,20 +66,30 @@ Options:SetScript("OnShow", function(self)
 	local AutoLoot = CreateFrame("CheckButton", "$parentAutoLoot", self, "InterfaceOptionsCheckButtonTemplate")
 	AutoLoot:SetPoint("TOPLEFT", ActivateOnEquip, "BOTTOMLEFT", 0, -12)
 	AutoLoot.Text:SetText(L["Enable auto-loot while fishing"])
-	AutoLoot.tooltipText = L["Your previous auto-loot setting is restored when you leave fishing mode."]
+	AutoLoot.tooltipText = L["Your previous setting is restored when you leave fishing mode."]
 	AutoLoot:SetScript("OnClick", function(this)
 		local checked = not not this:GetChecked()
-		PlaySound(checked and "igMainMenuOptionCheckBoxOn" or "igMainmenuOptionCheckBoxOff")
+		PlaySound(checked and SOUND_ON or SOUND_OFF)
 		GoFishDB.AutoLoot = checked
 	end)
 
+	local SoundInBG = CreateFrame("CheckButton", "$parentAutoLoot", self, "InterfaceOptionsCheckButtonTemplate")
+	SoundInBG:SetPoint("TOPLEFT", AutoLoot, "BOTTOMLEFT", 0, -12)
+	SoundInBG.Text:SetText(L["Enable sound in background while fishing"])
+	SoundInBG.tooltipText = L["Your previous setting is restored when you leave fishing mode."]
+	SoundInBG:SetScript("OnClick", function(this)
+		local checked = not not this:GetChecked()
+		PlaySound(checked and SOUND_ON or SOUND_OFF)
+		GoFishDB.SoundInBG = checked
+	end)
+
 	local EnhanceSounds = CreateFrame("CheckButton", "$parentEnhanceSounds", self, "InterfaceOptionsCheckButtonTemplate")
-	EnhanceSounds:SetPoint("TOPLEFT", AutoLoot, "BOTTOMLEFT", 0, -12)
+	EnhanceSounds:SetPoint("TOPLEFT", SoundInBG, "BOTTOMLEFT", 0, -12)
 	EnhanceSounds.Text:SetText(L["Enhance sound effects while fishing"])
 	EnhanceSounds.tooltipText = L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."]
 	EnhanceSounds:SetScript("OnClick", function(this)
 		local checked = not not this:GetChecked()
-		PlaySound(checked and "igMainMenuOptionCheckBoxOn" or "igMainmenuOptionCheckBoxOff")
+		PlaySound(checked and SOUND_ON or SOUND_OFF)
 		GoFishDB.EnhanceSounds = checked
 		self:refresh()
 	end)
@@ -166,8 +180,9 @@ Options:SetScript("OnShow", function(self)
 	function self:refresh()
 		ActivateOnMouseover:SetChecked(GoFishDB.ActivateOnMouseover)
 		ActivateOnEquip:SetChecked(GoFishDB.ActivateOnEquip)
-
 		AutoLoot:SetChecked(GoFishDB.AutoLoot)
+		SoundInBG:SetChecked(GoFishDB.SoundInBG)
+
 		EnhanceSounds:SetChecked(GoFishDB.EnhanceSounds)
 		MasterVolume:SetEnabled(GoFishDB.EnhanceSounds)
 		SFXVolume:SetEnabled(GoFishDB.EnhanceSounds)
