@@ -1,3 +1,7 @@
+### Version 7.3.0.1 (2017 Sep 22)
+
+* Fixed an error when changing options
+
 ### Version 7.3.0.0 (2017 Sep 14)
 
 * Updated for WoW 7.3
