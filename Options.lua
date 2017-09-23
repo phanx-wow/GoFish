@@ -2,7 +2,7 @@
 	GoFish
 	Click-cast fishing and enhanced fishing sounds.
 	Copyright (c) 2013-2017 Phanx <addons@phanx.net>. All rights reserved.
-    Maintained by Akkorian <armordecai@protonmail.com>
+	Maintained by Akkorian <armordecai@protonmail.com>
 	https://github.com/phanx-wow/GoFish
 	https://mods.curse.com/addons/wow/gofish
 	https://www.wowinterface.com/downloads/info22270-GoFish.html
@@ -13,8 +13,8 @@
 local ADDON, ns = ...
 local L = ns.L
 
-local SOUND_OFF = SOUNDKIT.IG_MAIN_MENU_OPTION_CHECK_BOX_OFF
-local SOUND_ON = SOUNDKIT.IG_MAIN_MENU_OPTION_CHECK_BOX_ON
+local SOUND_OFF = SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF
+local SOUND_ON = SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON
 
 local Options = CreateFrame("Frame", "GoFishOptions", InterfaceOptionsFramePanelContainer)
 Options.name = GetAddOnMetadata(ADDON, "Title") or ADDON
