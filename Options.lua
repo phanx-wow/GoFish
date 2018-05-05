@@ -1,10 +1,9 @@
 --[[--------------------------------------------------------------------
 	GoFish
 	Click-cast fishing and enhanced fishing sounds.
-	Copyright (c) 2013-2017 Phanx <addons@phanx.net>. All rights reserved.
-	Maintained by Akkorian <armordecai@protonmail.com>
+	Copyright (c) 2013-2018 Phanx <addons@phanx.net>. All rights reserved.
 	https://github.com/phanx-wow/GoFish
-	https://mods.curse.com/addons/wow/gofish
+	https://www.curseforge.com/wow/addons/gofish
 	https://www.wowinterface.com/downloads/info22270-GoFish.html
 ----------------------------------------------------------------------]]
 -- Double-click time 0.2 - 0.6 x 0.05
