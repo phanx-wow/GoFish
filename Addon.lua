@@ -386,7 +386,6 @@ GameTooltip:HookScript("OnShow", function(self)
 	local text = GameTooltipTextLeft1:GetText()
 
 	if not text or not F[text]
-	or (IsMounted() and not (UnitBuff("player", FROSTWOLF_WAR_WOLF) or UnitBuff("player", TELAARI_TALBUK)))
 	or IsInCombat()
 	or C_PetBattles.IsInBattle()
 	or UnitInVehicle("player")
@@ -394,6 +393,22 @@ GameTooltip:HookScript("OnShow", function(self)
 	or not allowedForms[GetShapeshiftFormID() or 0]
 	or farSight[UnitChannelInfo("player") or ""] then
 		return
+	end
+
+	if IsMounted() then
+		local nagrandGarrisonMount
+		for i = 1, 40 do
+			local name = UnitBuff("player", i)
+			if name == FROSTWOLF_WAR_WOLF or name == TELAARI_TALBUK then
+				nagrandGarrisonMount = true
+				break
+			elseif not name then
+				break
+			end
+		end
+		if not nagrandGarrisonMount then
+			return
+		end
 	end
 
 	GoFish:EnableFishingMode()
