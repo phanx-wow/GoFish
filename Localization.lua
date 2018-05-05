@@ -131,9 +131,24 @@ return end
 
 if CURRENT_LOCALE == "ptBR" then
 
+L["Activate when equipping a fishing pole"] = "Ativar quando a vara de pesca esta equipada"
+L["Activate when mousing over a fish pool"] = "Ativar quando o mouse estiver sobre o cardume"
+L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "Ajusta o volume do som ambiente durante a pesca. Para obter melhores resultados, diminua."
+L["Adjusts the master volume while fishing."] = "Ajusta o volume principal durante a pesca."
+L["Adjusts the music volume while fishing. For best results, turn it down."] = [=[Ajusta o volume de música durante a pesca. Para obter melhores resultados, diminua.
+
+L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = [=[Ajusta o volume do efeito sonoro durante a pesca. Para obter melhores resultados, aumente.
+
+L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "Ligar automaticamente o modo de pesca quando você passa o mouse sobre um cardume de peixes. Quando ativado desta forma, o modo de pesca é desativado após 10 segundos se você não pescar."
+L["Automatically turn on fishing mode while you have a fishing pole equipped."] = [=[Ligar automaticamente o modo de pesca enquanto você tem uma vara de pesca equipada.
+
+L["Enable auto-loot while fishing"] = "Habilite o saque automático enquanto pesca"
+L["Enhance sound effects while fishing"] = "Alterar os efeitos sonoros durante a pesca"
 L["Quick fishing {OFF}"] = "Pesca rápida {DESATIVOU}"
 L["Quick fishing {ON}"] = "Pesca rápida {ATIVOU}"
+L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "Para ouvir melhor o barulho da rolha, aumente o som, e diminua a música e som ambiente. Seus níveis de som normais são restaurados após a pesca."
 L["Toggle quick fishing"] = "Ativar/desativar pesca rápida"
+L["Your previous auto-loot setting is restored when you leave fishing mode."] = "Sua configuração anterior de saque automático é restaurada quando você sai do modo de pesca."
 
 return end
 
@@ -175,6 +190,22 @@ return end
 
 if CURRENT_LOCALE == "zhCN" then
 
+L["Activate when equipping a fishing pole"] = "装备鱼竿时启动"
+L["Activate when mousing over a fish pool"] = "当鼠标指针划过鱼点时启动"
+L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "在垂钓时调整环境音量.为了获得最佳效果,请将其关闭."
+L["Adjusts the master volume while fishing."] = "在垂钓时调整主音量"
+L["Adjusts the music volume while fishing. For best results, turn it down."] = "在垂钓时调整音乐音量.为了获得最佳效果,请将其关闭."
+L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "在垂钓时调整音效音量.为了获得最佳效果,请将其打开."
+L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "当鼠标悬停在鱼点上时,将自动开启垂钓模式.当以这种方式激活垂钓模式时,如果不进行抛竿,垂钓模式将于10秒后关闭."
+L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "当装备鱼竿后自动开启垂钓模式."
+L["Enable auto-loot while fishing"] = "垂钓时,开启自动拾取."
+L["Enhance sound effects while fishing"] = "垂钓时加强音效."
+L["Quick fishing {OFF}"] = "迅捷垂钓{关闭}"
+L["Quick fishing {ON}"] = "迅捷垂钓{开启}"
+L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "为了更好的听到垂钓音效,打开声音,并关闭音乐和环境音.音乐设置将在模式结束时恢复."
+L["Toggle quick fishing"] = "切换到迅捷垂钓模式"
+L["Your previous auto-loot setting is restored when you leave fishing mode."] = "退出垂钓模式时,之前更改的自动拾取的相关设置将会被恢复."
+
 return end
 
 ------------------------------------------------------------------------
@@ -185,16 +216,18 @@ if CURRENT_LOCALE == "zhTW" then
 
 L["Activate when equipping a fishing pole"] = "當裝備一個釣魚竿時啟動"
 L["Activate when mousing over a fish pool"] = "當滑鼠指向一個魚池時啟動"
-L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "當釣魚時調整環境的音量。"
+L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "在垂釣時調整環境音量,為了獲得最佳效果,請將其關閉."
 L["Adjusts the master volume while fishing."] = "當釣魚時調整主音量。"
-L["Adjusts the music volume while fishing. For best results, turn it down."] = "當釣魚時調整音樂的音量。"
-L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "當釣魚時調整音效的音量。"
+L["Adjusts the music volume while fishing. For best results, turn it down."] = "在垂釣時調整音樂音量.為了獲得最佳效果,請將其關閉."
+L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "在垂釣時調整音效音量.為了獲得最佳效果,請將其開啟."
 L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "當你滑鼠指向一個魚池自動開啟釣魚模式，當以此途徑啟動時，如果10秒沒動作之後釣魚模式將關閉。"
 L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "當你有裝備一個釣魚竿時，自動開啟釣魚模式。"
+L["Enable auto-loot while fishing"] = "垂釣時,開啟自動拾取."
 L["Enhance sound effects while fishing"] = "當釣魚時提高音效"
 L["Quick fishing {OFF}"] = "快速釣魚{OFF}"
 L["Quick fishing {ON}"] = "快速釣魚{ON}"
 L["To better hear the fishing bobber splash, turn Sounds up, and Music and Ambience down. Your normal sound levels are restored after fishing."] = "為更好的聽到釣魚浮標的飛濺聲，提高音效的音量，並同時降低音樂與環境的音量。當釣魚結束後音效會恢復原來的水平。"
 L["Toggle quick fishing"] = "開關快速釣魚"
+L["Your previous auto-loot setting is restored when you leave fishing mode."] = "退出垂釣模式時,之前更改的自動拾取的相關設置將會被恢復."
 
 return end
