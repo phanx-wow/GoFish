@@ -1,3 +1,10 @@
+### Version 7.3.5.0 (2018 May 6)
+
+* Added compatibility with WoW 8.0 beta
+* Added Portuguese translations
+* Updated Simplified Chinese translations
+* Updated Traditional Chinese translations
+
 ### Version 7.3.0.1 (2017 Sep 22)
 
 * Fixed an error when changing options
