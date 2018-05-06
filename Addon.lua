@@ -7,11 +7,15 @@
 	https://www.wowinterface.com/downloads/info22270-GoFish.html
 ----------------------------------------------------------------------]]
 
+local IS_WOW_8 = GetBuildInfo():match("^8")
+
 local ADDON, ns = ...
-local FISHING = GetSpellInfo(131474)
-local FISHING_POLE = select(7, GetItemInfo(6256))
-local FROSTWOLF_WAR_WOLF = GetSpellInfo(164222)
-local TELAARI_TALBUK = GetSpellInfo(165803)
+
+local FISHING_ID = 131474
+local FISHING_NAME = GetSpellInfo(FISHING_ID)
+local FISHING_POLE_NAME = select(7, GetItemInfo(6256))
+local FROSTWOLF_WAR_WOLF_NAME = GetSpellInfo(164222)
+local TELAARI_TALBUK_NAME = GetSpellInfo(165803)
 
 local L = ns.L
 L["Quick fishing {OFF}"] = L["Quick fishing {OFF}"]:gsub("{",  GRAY_FONT_COLOR_CODE):gsub("}", FONT_COLOR_CODE_CLOSE)
@@ -77,10 +81,10 @@ end
 
 local function IsFishingPoleEquipped()
 	-- Some people's game clients are broken?
-	if not FISHING_POLE then
-		FISHING_POLE = select(7, GetItemInfo(6256))
+	if not FISHING_POLE_NAME then
+		FISHING_POLE_NAME = select(7, GetItemInfo(6256))
 	end
-	return IsEquippedItemType(FISHING_POLE or UNKNOWN)
+	return IsEquippedItemType(FISHING_POLE_NAME or UNKNOWN)
 end
 
 local function EnhanceSounds()
@@ -133,7 +137,7 @@ GoFish:Hide()
 
 GoFish:SetAttribute("action", nil) -- wat?
 GoFish:SetAttribute("type", "spell")
-GoFish:SetAttribute("spell", FISHING)
+GoFish:SetAttribute("spell", FISHING_NAME)
 
 ------------------------------------------------------------------------
 
@@ -182,7 +186,7 @@ function GoFish:EnableFishingMode()
 	if isFishing then
 		return --print("Already fishing")
 	end
-	if not GetSpellInfo(FISHING) then
+	if not GetSpellInfo(FISHING_NAME) then
 		return --print("Fishing not learned")
 	end
 	if self.SetupClickHook then
@@ -246,10 +250,12 @@ function GoFish:PLAYER_LOGIN()
 	GoFishDB = initDB(defaults, GoFishDB)
 
 	-- Call again in case they weren't cached before:
-	FISHING = GetSpellInfo(131474)
-	FISHING_POLE = select(7, GetItemInfo(6256))
+	FISHING_NAME = GetSpellInfo(FISHING_ID)
+	FISHING_POLE_NAME = select(7, GetItemInfo(6256))
 
 	self:UnregisterEvent("PLAYER_LOGIN")
+
+	self:RegisterEvent("PET_BATTLE_OPENING_START")
 	self:RegisterEvent("PLAYER_LOGOUT")
 	self:RegisterEvent("PLAYER_REGEN_DISABLED")
 	self:RegisterEvent("PLAYER_REGEN_ENABLED")
@@ -258,7 +264,6 @@ function GoFish:PLAYER_LOGIN()
 	if GoFishDB.ActivateOnEquip then
 		self:RegisterUnitEvent("UNIT_INVENTORY_CHANGED", "player")
 	end
-	self:RegisterEvent("PET_BATTLE_OPENING_START")
 end
 
 function GoFish:PLAYER_LOGOUT()
@@ -273,8 +278,12 @@ function GoFish:PLAYER_REGEN_DISABLED()
 	self:UnregisterEvent("UNIT_SPELLCAST_CHANNEL_START")
 	self:UnregisterEvent("UNIT_SPELLCAST_CHANNEL_STOP")
 
-	if UnitChannelInfo("unit") == FISHING then
-		self:UNIT_SPELLCAST_CHANNEL_STOP("player", FISHING)
+	if UnitChannelInfo("unit") == FISHING_NAME then
+		if IS_WOW_8 then
+			self:UNIT_SPELLCAST_CHANNEL_STOP("player", nil, FISHING_ID)
+		else
+			self:UNIT_SPELLCAST_CHANNEL_STOP("player", FISHING_NAME, nil, nil, FISHING_ID)
+		end
 	end
 
 	if isFishing then
@@ -301,23 +310,35 @@ end
 
 ------------------------------------------------------------------------
 
-function GoFish:UNIT_SPELLCAST_CHANNEL_START(unit, spell)
-	if spell == FISHING then
-		--print("Fishing START")
-		EnhanceSounds()
-		if autoStopTime then
-			autoStopTime = GetTime() + 1000000
-		end
+function GoFish:UNIT_SPELLCAST_CHANNEL_START(unit, arg2, arg3, arg4, arg5)
+	-- WoW 7.x: unit, spellName, spellRank, lineID, spellID
+	-- WoW 8.x: unit, lineID, spellID
+	if IS_WOW_8 then
+		if arg3 ~= FISHING_ID then return end
+	else
+		if arg2 ~= FISHING_NAME then return end
+	end
+
+	--print("Fishing START")
+	EnhanceSounds()
+	if autoStopTime then
+		autoStopTime = GetTime() + 1000000
 	end
 end
 
 function GoFish:UNIT_SPELLCAST_CHANNEL_STOP(unit, spell)
-	if spell == FISHING then
-		--print("Fishing STOP")
-		RestoreSounds()
-		if autoStopTime then
-			autoStopTime = GetTime() + GoFishDB.MouseoverTimeout
-		end
+	-- WoW 7.x: unit, spellName, spellRank, lineID, spellID
+	-- WoW 8.x: unit, lineID, spellID
+	if IS_WOW_8 then
+		if arg3 ~= FISHING_ID then return end
+	else
+		if arg2 ~= FISHING_NAME then return end
+	end
+
+	--print("Fishing STOP")
+	RestoreSounds()
+	if autoStopTime then
+		autoStopTime = GetTime() + GoFishDB.MouseoverTimeout
 	end
 end
 
@@ -398,7 +419,7 @@ GameTooltip:HookScript("OnShow", function(self)
 		local nagrandGarrisonMount
 		for i = 1, 40 do
 			local name = UnitBuff("player", i)
-			if name == FROSTWOLF_WAR_WOLF or name == TELAARI_TALBUK then
+			if name == FROSTWOLF_WAR_WOLF_NAME or name == TELAARI_TALBUK_NAME then
 				nagrandGarrisonMount = true
 				break
 			elseif not name then
