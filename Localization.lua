@@ -135,13 +135,10 @@ L["Activate when equipping a fishing pole"] = "Ativar quando a vara de pesca est
 L["Activate when mousing over a fish pool"] = "Ativar quando o mouse estiver sobre o cardume"
 L["Adjusts the ambient sound volume while fishing. For best results, turn it down."] = "Ajusta o volume do som ambiente durante a pesca. Para obter melhores resultados, diminua."
 L["Adjusts the master volume while fishing."] = "Ajusta o volume principal durante a pesca."
-L["Adjusts the music volume while fishing. For best results, turn it down."] = [=[Ajusta o volume de música durante a pesca. Para obter melhores resultados, diminua.
-
-L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = [=[Ajusta o volume do efeito sonoro durante a pesca. Para obter melhores resultados, aumente.
-
+L["Adjusts the music volume while fishing. For best results, turn it down."] = "Ajusta o volume de música durante a pesca. Para obter melhores resultados, diminua."
+L["Adjusts the sound effect volume while fishing. For best results, turn it up."] = "Ajusta o volume do efeito sonoro durante a pesca. Para obter melhores resultados, aumente."
 L["Automatically turn on fishing mode when you mouse over a fish pool. When activated this way, fishing mode is disabled after 10 seconds if you don't cast."] = "Ligar automaticamente o modo de pesca quando você passa o mouse sobre um cardume de peixes. Quando ativado desta forma, o modo de pesca é desativado após 10 segundos se você não pescar."
-L["Automatically turn on fishing mode while you have a fishing pole equipped."] = [=[Ligar automaticamente o modo de pesca enquanto você tem uma vara de pesca equipada.
-
+L["Automatically turn on fishing mode while you have a fishing pole equipped."] = "Ligar automaticamente o modo de pesca enquanto você tem uma vara de pesca equipada."
 L["Enable auto-loot while fishing"] = "Habilite o saque automático enquanto pesca"
 L["Enhance sound effects while fishing"] = "Alterar os efeitos sonoros durante a pesca"
 L["Quick fishing {OFF}"] = "Pesca rápida {DESATIVOU}"
