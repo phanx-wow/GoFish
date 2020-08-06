@@ -62,8 +62,18 @@ Options:SetScript("OnShow", function(self)
 		end
 	end)
 
+	local AnnounceInChat = CreateFrame("CheckButton", "$parentAnnounceInChat", self, "InterfaceOptionsCheckButtonTemplate")
+	AnnounceInChat:SetPoint("TOPLEFT", ActivateOnEquip, "BOTTOMLEFT", 0, -12)
+	AnnounceInChat.Text:SetText(L["Chat notification when fishing mode is changed"])
+	AnnounceInChat.tooltipText = L["Show a chat message each time when fishing mode is turned on or off."]
+	AnnounceInChat:SetScript("OnClick", function(this)
+		local checked = not not this:GetChecked()
+		PlaySound(checked and SOUND_ON or SOUND_OFF)
+		GoFishDB.AnnounceInChat = checked
+	end)
+
 	local AutoLoot = CreateFrame("CheckButton", "$parentAutoLoot", self, "InterfaceOptionsCheckButtonTemplate")
-	AutoLoot:SetPoint("TOPLEFT", ActivateOnEquip, "BOTTOMLEFT", 0, -12)
+	AutoLoot:SetPoint("TOPLEFT", AnnounceInChat, "BOTTOMLEFT", 0, -12)
 	AutoLoot.Text:SetText(L["Enable auto-loot while fishing"])
 	AutoLoot.tooltipText = L["Your previous setting is restored when you leave fishing mode."]
 	AutoLoot:SetScript("OnClick", function(this)

@@ -56,6 +56,7 @@ local extraCVars = { -- extra things to disable in fishing mode if sound was glo
 local defaults = {
 	ActivateOnEquip = true,
 	ActivateOnMouseover = true,
+	AnnounceInChat = true,
 	AutoLoot = true,
 	EnhanceSounds = true,
 	MouseoverTimeout = 10,
@@ -203,7 +204,9 @@ function GoFish:EnableFishingMode()
 	end
 
 	isFishing = true
-	print("|cff00ddbaGoFish:|r", L["Quick fishing {ON}"])
+	if GoFishDB.AnnounceInChat then
+		print("|cff00ddbaGoFish:|r", L["Quick fishing {ON}"])
+	end
 end
 
 function GoFish:DisableFishingMode()
@@ -220,7 +223,9 @@ function GoFish:DisableFishingMode()
 	end
 
 	autoStopTime = nil
-	print("|cff00ddbaGoFish:|r", L["Quick fishing {OFF}"])
+	if GoFishDB.AnnounceInChat then
+		print("|cff00ddbaGoFish:|r", L["Quick fishing {OFF}"])
+	end
 end
 
 function GoFish:ToggleFishingMode()
